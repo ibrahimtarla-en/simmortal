@@ -116,7 +116,7 @@ public class ShopRepository {
   }
 
   public Map<String, String> getCustomerByUserId(String userId) {
-    String customerId = customers.get(userId);
+    String customerId = customers.getOrDefault(userId, "");
     return Map.of(
         "userId", userId,
         "customerId", customerId);

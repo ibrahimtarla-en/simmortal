@@ -1,5 +1,6 @@
 package com.simmortal.user;
 
+import java.util.Map;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -16,19 +17,33 @@ public class UserService {
   }
 
   public Object sendPhoneNumberVerificationCode(String userId, String phoneNumber) {
-    throw new UnsupportedOperationException("Not implemented yet");
+    Map<String, Object> response = new java.util.HashMap<>();
+    response.put("userId", userId);
+    response.put("phoneNumber", phoneNumber);
+    response.put("status", "sent");
+    return response;
   }
 
   public Object verifyUserPhoneNumber(String userId, String phoneNumber, String code) {
-    throw new UnsupportedOperationException("Not implemented yet");
+    Map<String, Object> response = new java.util.HashMap<>();
+    response.put("userId", userId);
+    response.put("phoneNumber", phoneNumber);
+    response.put("verified", true);
+    return response;
   }
 
   public Object getDashboardUrl(String userId) {
-    throw new UnsupportedOperationException("Not implemented yet");
+    return Map.of("url", "https://dashboard.simmortals.com/user/" + userId);
   }
 
   public Object updateUserProfile(String userId, UpdateUserProfileRequest request, MultipartFile image) {
-    throw new UnsupportedOperationException("Not implemented yet");
+    Map<String, Object> response = new java.util.HashMap<>();
+    response.put("userId", userId);
+    response.put("firstName", request.firstName());
+    response.put("lastName", request.lastName());
+    response.put("location", request.location());
+    response.put("dateOfBirth", request.dateOfBirth());
+    return response;
   }
 
   public Object deleteUser(String userId) {

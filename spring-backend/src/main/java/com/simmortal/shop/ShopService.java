@@ -85,22 +85,35 @@ public class ShopService {
 
   public Object updateOrderStatus(String id, OrderStatus status, String adminUserId) {
     shopRepository.updateOrderStatus(id, status);
-    return Map.of("id", id, "status", status.getValue());
+    Map<String, Object> response = new java.util.HashMap<>();
+    response.put("id", id);
+    response.put("status", status == null ? null : status.getValue());
+    response.put("updatedBy", adminUserId);
+    return response;
   }
 
   public Object updateDecorationPrice(MemorialDecoration decoration, Integer priceInCents) {
     shopRepository.updateDecorationPrice(decoration, priceInCents);
-    return Map.of("decoration", decoration.getValue(), "price", String.valueOf(priceInCents));
+    Map<String, Object> response = new java.util.HashMap<>();
+    response.put("decoration", decoration == null ? null : decoration.getValue());
+    response.put("price", priceInCents == null ? null : String.valueOf(priceInCents));
+    return response;
   }
 
   public Object updateTributePrice(MemorialTribute tribute, Integer priceInCents) {
     shopRepository.updateTributePrice(tribute, priceInCents);
-    return Map.of("tribute", tribute.getValue(), "price", String.valueOf(priceInCents));
+    Map<String, Object> response = new java.util.HashMap<>();
+    response.put("tribute", tribute == null ? null : tribute.getValue());
+    response.put("price", priceInCents == null ? null : String.valueOf(priceInCents));
+    return response;
   }
 
   public Object updateWreathPrice(MemorialDonationWreath wreath, Integer priceInCents) {
     shopRepository.updateWreathPrice(wreath, priceInCents);
-    return Map.of("wreath", wreath.getValue(), "price", String.valueOf(priceInCents));
+    Map<String, Object> response = new java.util.HashMap<>();
+    response.put("wreath", wreath == null ? null : wreath.getValue());
+    response.put("price", priceInCents == null ? null : String.valueOf(priceInCents));
+    return response;
   }
 
   public Object findCustomerByUserId(String userId) {

@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/simmortal
+    username: simmortal
+    password: simmortal
+  jpa:
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+  mail:
+    host: smtp.example.com
+    port: 587
+    username: user
+    password: password
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true

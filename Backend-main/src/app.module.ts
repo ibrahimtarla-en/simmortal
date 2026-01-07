@@ -1,10 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { SuperTokensAuthGuard, SuperTokensModule } from 'supertokens-nestjs';
 import { env } from './config/env';
-import { supertokensConfig } from './config/supertokens.config';
 import { UserModule } from './user/user.module';
-import { APP_GUARD } from '@nestjs/core';
 import { StorageModule } from './storage/storage.module';
 import { MemorialModule } from './memorial/memorial.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -13,7 +10,6 @@ import { MailModule } from './mail/mail.module';
 import { AssetModule } from './asset/asset.module';
 import { ShopModule } from './shop/shop.module';
 import { AIModule } from './ai/ai.module';
-import { UserService } from './user/user.service';
 import { NotificationModule } from './notification/notification.module';
 import { ContactModule } from './contact/contact.module';
 import { AdminModule } from './admin/admin.module';
@@ -34,11 +30,6 @@ import { ScheduleModule } from '@nestjs/schedule';
     ScheduleModule.forRoot(),
     MailModule,
     UserModule,
-    SuperTokensModule.forRootAsync({
-      imports: [UserModule],
-      inject: [UserService],
-      useFactory: (userService: UserService) => supertokensConfig(userService),
-    }),
     StorageModule,
     MemorialModule,
     VerificationModule,
@@ -49,12 +40,6 @@ import { ScheduleModule } from '@nestjs/schedule';
     ContactModule,
     AdminModule,
     CleanupModule,
-  ],
-  providers: [
-    {
-      provide: APP_GUARD,
-      useClass: SuperTokensAuthGuard,
-    },
   ],
 })
 export class AppModule {}

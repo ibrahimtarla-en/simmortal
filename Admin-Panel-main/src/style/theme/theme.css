@@ -1,0 +1,86 @@
+@theme {
+  /** Colors **/
+  /* Mauveine Colors */
+  --color-mauveine-50: #fae8fe;
+  --color-mauveine-100: #f4cdfe;
+  --color-mauveine-200: #eb96fd;
+  --color-mauveine-300: #e457fb;
+  --color-mauveine-400: #c517db;
+  --color-mauveine-500: #910ea2;
+  --color-mauveine-600: #770985;
+  --color-mauveine-700: #5e0669;
+  --color-mauveine-800: #42034b;
+  --color-mauveine-900: #2b0132;
+  --color-mauveine-950: #1f0124;
+
+  /* Zinc Colors */
+  --color-zinc-50: #fafafa;
+  --color-zinc-100: #f4f4f5;
+  --color-zinc-200: #e4e4e7;
+  --color-zinc-300: #d4d4d8;
+  --color-zinc-400: #a1a1aa;
+  --color-zinc-500: #71717a;
+  --color-zinc-600: #52525b;
+  --color-zinc-700: #3f3f46;
+  --color-zinc-800: #27272a;
+  --color-zinc-900: #18181b;
+  --color-zinc-950: #09090b;
+
+  /* Gradients */
+  --gradient-shine: radial-gradient(
+    268.93% 124.63% at 6.25% 6.25%,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0.2) 55.21%,
+    rgba(255, 255, 255, 0.6) 100%
+  );
+  --gradient-card-fill: radial-gradient(
+    151.92% 127.02% at 15.32% 21.04%,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.04) 77.08%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  --gradient-mauveine: linear-gradient(
+    180deg,
+    var(--color-mauveine-600) 0%,
+    var(--color-mauveine-800) 100%
+  );
+
+  /** Typography **/
+  /* Fonts */
+  --font-family-sans: 'Albert Sans', sans-serif;
+  --font-family-serif: 'Playfair Display', serif;
+  --font-serif: var(--font-family-serif);
+  --font-sans: var(--font-family-sans);
+
+  --text-2xs: 0.625rem; /* 10px */
+  --text-5xl: 2.625rem; /* 42px */
+  --text-6xl: 3rem; /* 48px */
+  --text-7xl: 3.75rem; /* 60px */
+  --text-8xl: 4.5rem; /* 72px */
+  --text-9xl: 6rem; /* 96px */
+  --text-10xl: 8rem; /* 128px */
+
+  /** Responsive Sizes **/
+  --breakpoint-2xl: 90rem; /* 1440px */
+
+  /** Animations **/
+  --animate-slide-in-from-right: slide-in-from-right 150ms ease-out forwards;
+  @keyframes slide-in-from-right {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  --animate-slide-out-to-right: slide-out-to-right 150ms ease-in forwards;
+  @keyframes slide-out-to-right {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
+}

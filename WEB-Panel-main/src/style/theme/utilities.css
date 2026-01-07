@@ -1,0 +1,27 @@
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1rem;
+  max-width: 1696px;
+
+  @variant md {
+    padding-inline: 2rem;
+  }
+
+  @variant lg {
+    padding-inline: 4rem;
+  }
+
+  @variant 2xl {
+    padding-inline: 8rem;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+}

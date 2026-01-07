@@ -1,0 +1,870 @@
+{
+  "Common": {
+    "yes": "Evet",
+    "homePage": "Ana Sayfa",
+    "about": "Hakkımızda",
+    "contact": "İletişim",
+    "faq": "SSS",
+    "create": "Oluştur",
+    "signUp": "Kayıt Ol",
+    "login": "Giriş Yap",
+    "logout": "Çıkış Yap",
+    "profile": "Profil",
+    "memorials": "Hatıra Sayfaları",
+    "myPages": "Sayfalarım",
+    "createMemorial": "Hatıra Sayfası Oluştur",
+    "or": "veya",
+    "view": "Görüntüle",
+    "viewAll": "Tümünü Görüntüle",
+    "privacyPolicy": "Gizlilik Politikası",
+    "termsOfService": "Hizmet Şartları",
+    "communityGuidelines": "Topluluk Kuralları",
+    "gdpr": "Kişisel Verilerin Korunması ve İşlenmesi Hakkında Genel Aydınlatma Metni",
+    "born": "Doğum",
+    "died": "Vefat",
+    "dateOfBirth": "Doğum Tarihi",
+    "dateOfPassing": "Vefat Tarihi",
+    "country": "Ülke",
+    "nationality": "Uyruk",
+    "firstName": "Ad",
+    "lastName": "Soyad",
+    "email": "E-posta",
+    "password": "Şifre",
+    "relation": "İlişki",
+    "location": "Konum",
+    "send": "Gönder",
+    "verify": "Doğrula",
+    "continue": "Devam Et",
+    "free": "Ücretsiz",
+    "premium": "Premium",
+    "back": "Geri",
+    "next": "İleri",
+    "previewMemoryButton": "Anıyı Önizle",
+    "shop": "Anı Dükkanı",
+    "all": "Tümü",
+    "checkout": "Ödeme",
+    "publish": "Yayınla",
+    "viewDetails": "Detayları Görüntüle",
+    "contribute": "Katkıda Bulun",
+    "previewMemorialButton": "Hatıra Sayfasını Önizle",
+    "search": "Ara",
+    "noResults": "Sonuç bulunamadı.",
+    "annual": "Yıllık",
+    "monthly": "Aylık",
+    "month": "ay",
+    "year": "yıl",
+    "recommended": "Önerilen",
+    "draft": "Taslak",
+    "published": "Yayınlandı",
+    "removed": "Kaldırıldı",
+    "someone": "Birisi",
+    "total": "Toplam",
+    "address": "Adres",
+    "postCode": "Posta Kodu",
+    "city": "Şehir",
+    "state": "Eyalet/Bölge",
+    "phoneNumber": "Telefon Numarası",
+    "approve": "Onayla",
+    "reject": "Reddet",
+    "save": "Kaydet",
+    "submit": "Gönder",
+    "report": "Şikayet Et",
+    "change": "Değiştir",
+    "cancel": "İptal",
+    "delete": "Sil",
+    "edit": "Düzenle",
+    "areYouSure": "Emin misiniz?",
+    "zoom": "Yakınlaştır",
+    "processing": "İşleniyor",
+    "reset": "Sıfırla",
+    "play": "Başlat",
+    "message": "Mesaj",
+    "gdprForm": "KVKK Formu",
+    "contributionDisclaimer": "Gerçeği yansıtmayan veya hakaret içeren katkılarınız yöneticiler tarafından silinecektir.",
+    "donate": "Bağış Yap",
+    "saplings": "Ağaç Fidanı",
+    "updatesSavedTitle": "Düzenleme Kaydedildi",
+    "updatesSavedDescription": "Yaptığın değişiklikler başarıyla kaydedildi.",
+    "SortOptions": {
+      "title": "Sıralama",
+      "recent": "En Yeni",
+      "likes": "En Çok Beğeni"
+    },
+    "honoredTheirMemory": "Onun anısına bir {name} bıraktı.",
+    "FrameNames": {
+      "default": "Gri Çerçeve",
+      "aurelian-sovereign": "Aurelian Egemen",
+      "baroque-argentum": "Barok Gümüş",
+      "baroque-royale": "Barok Kraliyet",
+      "chromeline-elegance": "Chromeline Zarafet",
+      "frosted-sovereign": "Buzlu Egemen",
+      "golden-heritage": "Altın Miras",
+      "imperial-gilded-crest": "İmparatorluk Yaldızlı Arma",
+      "majestic-aureate": "Görkemli Altın",
+      "silver-nocturne": "Gümüş Gece",
+      "sovereign-silverleaf": "Egemen Gümüş Yaprak"
+    },
+    "TributeNames": {
+      "default": "Anma Yok",
+      "amethyst-tranquility": "Ametist Huzur",
+      "blossom-of-grace": "Zarafet Çiçeği",
+      "crimson-devotion": "Kızıl Bağlılık",
+      "flames-of-remembrance": "Anı Alevleri",
+      "frostlight-harmony": "Buzışığı Uyum",
+      "golden-serenity": "Altın Dinginlik",
+      "lunar-serenity": "Ay Işığı Huzuru",
+      "midnight-serenity": "Gece Yarısı Huzuru",
+      "ocean-of-light": "Işık Okyanusu",
+      "royal-sunrise": "Kraliyet Şafağı",
+      "celestial-bloom": "Gökyüzü Tomurcuğu",
+      "midnight-elegy": "Gece Yarısı Efsunu"
+    },
+    "DecorationNames": {
+      "no-decoration": "Dekorasyon Yok",
+      "amethera-rose": "Amethera Gülü",
+      "amethyst-ravel": "Ametist Ravel",
+      "aurelia-bloom": "Aurelia Çiçeği",
+      "azure-peonia": "Azure Şakayık",
+      "celestia-lily": "Celestia Zambak",
+      "circle-of-serenity": "Huzur Çemberi",
+      "coralia-hibiscus": "Coralia Ebegümeci",
+      "frostaria-bloom": "Frostaria Çiçeği",
+      "golden-reverie": "Altın Düş",
+      "ivory-whisper": "Fildişi Fısıltı",
+      "lunaria-lily": "Lunaria Zambak",
+      "nocturne-calla": "Gece Kallası",
+      "rosalia-peony": "Rosalia Şakayık",
+      "seraphine-calla": "Seraphine Kalla",
+      "solaria-bloom": "Solaria Çiçeği",
+      "solaris-hibiscus": "Solaris Ebegümeci",
+      "sonata-bloom": "Sonat Çiçeği",
+      "trinity-of-light": "Işık Üçlüsü",
+      "veloria-lisianthus": "Veloria Lisyantus"
+    }
+  },
+  "Placeholder": {
+    "firstName": "Ahmet",
+    "lastName": "Yılmaz",
+    "email": "ahmetyilmaz@gmail.com",
+    "select": "Seç",
+    "phoneNumber": "533 826 ** **",
+    "dateOfMemory": "Tarihi hatırlıyor musunuz?",
+    "userPromptMemory": "Anınızı buraya yazın...",
+    "address": "Adresiniz",
+    "postCode": "12345",
+    "city": "İstanbul",
+    "state": "Kağıthane",
+    "memorialPersonNamePlaceholder": "Eda Yılmaz",
+    "dateOfBirthPlaceholder": "13 Mayıs 1972",
+    "dateOfPassingPlaceholder": "28 Haziran 2015",
+    "placeOfDeathPlaceholder": "İstanbul, Türkiye",
+    "placeOfBirthPlaceholder": "Ankara, Türkiye",
+    "message": "Mesajınızı buraya yazın..."
+  },
+  "Profile": {
+    "editProfile": "Profili Düzenle",
+    "invoices": "Faturalar",
+    "manageSubscriptions": "Abonelikleri Yönet",
+    "deleteAccount": "Hesabı Sil",
+    "areYouSure": "Emin misiniz?",
+    "deleteAccountDescription": "Bu işlem geri alınamaz.",
+    "changesSavedTitle": "Profile Updated",
+    "changesSavedDescription": "Your profile details were updated successfully.",
+    "Tabs": {
+      "myWreaths": "Çelenklerim",
+      "likedWreaths": "Beğenilen Çelenkler",
+      "myMemories": "Anılarım",
+      "myCondolences": "Taziye Mesajlarım",
+      "likedMemories": "Beğenilen Anılar",
+      "likedCondolences": "Beğenilen Taziye Mesajları"
+    }
+  },
+  "Error": {
+    "generic": "Bir şeyler ters gitti. Lütfen tekrar deneyin.",
+    "invalidName": "Lütfen geçerli bir ad girin.",
+    "invalidLastName": "Lütfen geçerli bir soyad girin.",
+    "missingCountry": "Lütfen bir ülke seçin.",
+    "missingRelation": "Lütfen ilişkinizi seçin.",
+    "invalidDateOfBirth": "Lütfen geçerli bir doğum tarihi girin.",
+    "invalidDateOfPassing": "Lütfen geçerli bir vefat tarihi girin.",
+    "invalidPlaceOfDeath": "Lütfen geçerli bir vefat yeri girin.",
+    "invalidPlaceOfBirth": "Lütfen geçerli bir doğum yeri girin.",
+    "missingPicture": "Lütfen bir fotoğraf yükleyin.",
+    "invalidCity": "Lütfen geçerli bir şehir girin.",
+    "invalidAddress": "Lütfen geçerli bir adres girin.",
+    "invalidPostCode": "Lütfen geçerli bir posta kodu girin.",
+    "invalidState": "Lütfen geçerli bir eyalet/bölge girin.",
+    "invalidPhoneNumber": "Lütfen geçerli bir telefon numarası girin.",
+    "invalidEmail": "Lütfen geçerli bir e-posta adresi girin.",
+    "missingMemorial": "Lütfen bir hatıra sayfası seçin.",
+    "messageTooShort": "Mesaj çok kısa.",
+    "locationErrorTitle": "Konum Erişim Hatası",
+    "locationErrorMessage": "Konumunuz alınamadı. Lütfen konum hizmetlerinin etkin olduğundan emin olun ve tekrar deneyin.",
+    "birthAfterDeath": "Doğum tarihi vefat tarihinden sonra olamaz.",
+    "messageTooLong": "Mesaj çok uzun.",
+    "fileTooLarge": "En fazla {size} MB boyutunda dosya yükleyebilirsin."
+  },
+  "Footer": {
+    "copyright": "© <year></year> Simmortals. Tüm hakları saklıdır."
+  },
+  "SimmTag": {
+    "assignLocation": "Konumu Ata",
+    "assignLocationDescription": "Lütfen konum atama işlemini hatıra sayfası açtığınız kişinin mezar yerinin",
+    "confirmLocationButtonLabel": "Evet, mezar yerinin yakınındayım",
+    "cancelLocationButtonLabel": "Vazgeç, konumu daha sonra ata",
+    "assigningLocation": "Mezar Konumu Belirleniyor...",
+    "noSimmTag": "Konum SimmTag'i Yok",
+    "locationAssignedTitle": "Konum Atandı",
+    "locationAssignedMessage": "Konum başarıyla SimmTag®'e atandı."
+  },
+  "MyPages": {
+    "title": "Sayfalarım",
+    "noPages": "Henüz hatıra sayfanız yok.",
+    "noDrafts": "Taslak hatıra sayfanız yok.",
+    "noPublished": "Yayımlanmış hatıra sayfanız yok."
+  },
+  "HomePage": {
+    "title": "Herkes hatırlanmaya değer.",
+    "tagline": "Simmortals ile kaybettiğiniz sevdiğinize özel bir anı sayfası oluşturabilir, hatırasını nesiller boyu yaşatabilirsiniz.",
+    "FeaturesCarousel": {
+      "title": "Hatırasını özenle yaşatın",
+      "memorial": {
+        "title": "Hatıra Sayfası Oluşturun",
+        "description": "Sevdiğinizin anısını yaşatmak için ona özel bir hatıra sayfası yaratın."
+      },
+      "location": {
+        "title": "Mezar konumunu İşaretleyin",
+        "description": "Hatıra sayfasına entegre SimmTag® ile mezar konumunu sevenleriyle paylaşın.  "
+      },
+      "simmtag": {
+        "title": "SimmTag® Oluşturun",
+        "description": "SimmTag® ile hatıra sayfasını ziyaretçileriyle paylaşın."
+      },
+      "lifestory": {
+        "title": "Yaşam Öyküsü Oluşturun",
+        "description": "Sevdiğinizin hayatını detaylandıran, kapsamlı bir Yaşam Öyküsü oluşturun."
+      },
+      "memory": {
+        "title": "Anılarını Paylaşın",
+        "description": "Sevdiğinizin anılarını fotoğraflar, videolar ve hikâyelerle paylaşın."
+      },
+      "condolence": {
+        "title": "Taziye Mesajı İletin",
+        "description": "Hatıra sayfasına taziye mesajı bırakın."
+      },
+      "donation": {
+        "title": "Yaşamını İyilikle Onurlandırın",
+        "description": "Sevdiğinizin yaşamını ağaç fidanlarıyla ölümsüzleştirin."
+      }
+    }
+  },
+
+  "FeaturedMemorial": {
+    "viewMemorial": "Hatıra Sayfasını Görüntüle"
+  },
+  "CreateMemorialBanner": {
+    "title": "Hatıra Sayfası Oluşturun",
+    "description": "Sevdiğinizin ışığının parlamaya devam etmesine izin verin.",
+    "getStarted": "Başlayın",
+    "namePlaceholder": "Lütfen kişinin adını girin"
+  },
+  "Elements": {
+    "GoogleButton": {
+      "label": "Google ile Devam Et"
+    },
+    "FileUpload": {
+      "dragAndDrop": "Bir dosyayı sürükleyip bırakın",
+      "browseYourComputer": "Cihazınıza göz atın"
+    },
+    "TextArea": {
+      "max": "maksimum"
+    }
+  },
+  "Auth": {
+    "welcomeBack": "Tekrar hoş geldiniz",
+    "rememberMe": "Beni hatırla",
+    "newPassword": "Yeni Şifre",
+    "forgotPassword": "Şifrenizi unuttunuz mu?",
+    "dontHaveAccount": "Hesabınız yok mu?",
+    "createAccount": "Hesap oluşturun",
+    "haveAccount": "Zaten hesabınız var mı?",
+    "consent": "<terms>Kullanım Koşulları</terms>, <community>Topluluk Standartlarını</community> ve <gdpr>Üyelik Faaliyetleri Kapsamında KVKK Aydınlatma Metni</gdpr>’ni okudum, anladım.",
+    "invalidEmail": "Lütfen geçerli bir e-posta adresi girin.",
+    "invalidPassword": "Lütfen geçerli bir şifre girin.",
+    "wrongCredentials": "Hatalı e-posta veya şifre.",
+    "noFirstName": "Lütfen adınızı girin.",
+    "noLastName": "Lütfen soyadınızı girin.",
+    "missingConsent": "Hizmet şartlarını ve gizlilik politikasını kabul etmelisiniz.",
+    "passwordFormatError": "Şifre en az 8 karakter içermeli ve bir sayı barındırmalıdır",
+    "verificationSuccess": "E-posta adresin onaylandı.\n\nArtık bir hatıra sayfası oluşturabilirsin.",
+    "verificationFailed": "E-posta doğrulaması başarısız",
+    "verificationFailedDescription": "E-postanızı doğrulayamadık.",
+    "loginToRequestNewLink": "Yeni bir doğrulama bağlantısı istemek için lütfen giriş yapın.",
+    "resendVerificationEmail": "Doğrulama E-postasını Tekrar Gönder",
+    "checkInbox": "Lütfen gelen kutunuzu kontrol edin",
+    "linkSent": "Hesap etkinleştirme bağlantısı belirttiğiniz e-posta adresine gönderildi.",
+    "didntGetVerificationEmail": "Doğrulama e-postasını almadınız mı? <resend>Tekrar Gönder</resend>",
+    "resetPassword": "Şifreyi Sıfırla",
+    "resetPasswordSent": "Şifre sıfırlama bağlantısı {email} adresine gönderildi.\n\nSpam klasörünü kontrol etmeyi unutma.",
+    "passwordChanged": "Şifren başarıyla güncellendi."
+  },
+  "CreateMemorial": {
+    "title": "Hatıra Sayfası Oluşturun",
+    "Stages": {
+      "identity": "Bu Hatıra Sayfası Kimin İçin?",
+      "about": "Geçmişin Fısıltıları",
+      "url": "Hatıra Sayfası URL'si Oluşturun",
+      "frame": "Bir Çerçeve Seçin",
+      "tribute": "Bir Hatıra Sanatı Seçin",
+      "simmTag": "Bir SimmTag® Seçin",
+      "music": "Arka Plan Müziği Seçin",
+      "preview": "Önizleme",
+      "checkout": "Ödeme",
+      "cover": "Kapak Fotoğrafı",
+      "livePortrait": "Canlı Portre",
+      "Identity": {
+        "whoIsMemorialFor": "Bu hatıra sayfası kimin için?",
+        "relation": "İlişki",
+        "placeOfBirth": "Doğum Yeri",
+        "placeOfDeath": "Vefat Yeri",
+        "disclaimer": "Yanlış veya yanıltıcı bilgi sağlamanın hatıra sayfasının iptal edilmesi veya kaldırılmasına neden olabileceğini lütfen unutmayın.",
+        "Relation": {
+          "family": "Aile",
+          "partner": "Partner",
+          "colleague": "Meslektaş",
+          "friend": "Arkadaş",
+          "other": "Diğer"
+        }
+      },
+      "Cover": {
+        "stageDescription": "Lütfen hatıra sayfanız için bir kapak fotoğrafı seçin."
+      },
+      "About": {
+        "userPrompt": "<name></name> hakkında kendi sözlerinizle bize anlatın.",
+        "writeInstead": "Bunun yerine yazmak ister misiniz?",
+        "recordInstead": "Bunun yerine sesini kaydetmek ister misiniz?",
+        "transcribing": "Sesiniz yazıya dönüştürülüyor..."
+      },
+      "Url": {
+        "stageDescription": "Hatıra sayfası bağlantınızı aşağıdan özelleştirebilirsiniz.",
+        "urlRules": "Sadece harf, rakam ve tire kullanın. Boşluk, sembol veya özel karakterlere izin verilmez.",
+        "visibilityInfo": "Sadece bağlantıya sahip kişiler bu hatıra sayfasına erişebilir.",
+        "urlTooShort": "URL çok kısa.",
+        "urlTooLong": "URL çok uzun.",
+        "urlInvalid": "URL sadece küçük harf, rakam ve tire içerebilir. Harf veya rakamla başlayıp bitmelidir.",
+        "urlNotAvailable": "Bu URL kullanılamıyor. Lütfen başka bir tane deneyin."
+      },
+      "LivePortrait": {
+        "stageDescription": "Hatıra sayfanızı canlandırmak için bir canlı portre efekti seçin.",
+        "hint": "Canlı Portreler, dinamik ve etkileyici bir deneyim yaratmak için ince animasyonlar kullanır.\nYayınladıktan sonra canlı portrenizin işlenmesi birkaç dakika sürebilir.",
+        "disclaimer": "Videolar efektlerin temsilidir.\nCanlı portreniz, hatıra sayfası yayınlandıktan ve bir efekt seçildikten sonra yüklediğiniz resme göre oluşturulacaktır.",
+        "EffectNames": {
+          "none": "Canlı Portre Yok",
+          "effectOne": "Efekt Bir",
+          "effectTwo": "Efekt İki"
+        }
+      },
+      "Frame": {
+        "stageDescription": "Lütfen bir çerçeve tasarımı seçin."
+      },
+      "Tribute": {
+        "stageDescription": "Hatıra sayfanızı bir sanat eserine dönüştürün."
+      },
+      "SimmTag": {
+        "stageDescription": "Ziyaretçilerin <name></name>'nin son dinlenim yerini bulabilmeleri için bir SimmTag® seçin."
+      },
+      "Music": {
+        "stageDescription": "Hatıra sayfanız için arka plan müziği seçin.",
+        "Tracks": {
+          "none": "Müzik Yok",
+          "cello-one": "Çello Bir",
+          "cello-two": "Çello İki",
+          "piano": "Piyano",
+          "ud": "Ud",
+          "violin-one": "Keman Bir",
+          "violin-two": "Keman İki"
+        }
+      },
+      "Preview": {
+        "stageDescription": "Sayfanız hazır. Lütfen ödeme öncesi son incelemeyi yapın."
+      },
+      "Checkout": {
+        "choosePlan": "Ödeme Planınızı Seçin",
+        "donationFootnote": "*Tüm gelirlerin %10'u Türk Eğitim Vakfı'na bağışlanacaktır.",
+        "keepForever": "Sonsuza Kadar Sakla",
+        "TableRows": {
+          "expiration": "Süre Dolumu",
+          "addImage": "Resim Ekle",
+          "frame": "Çerçeve",
+          "tribute": "Hatıra Sanatı",
+          "simmTag": "Dijital SimmTag®",
+          "timeline": "Zaman Çizelgesi Görünümü",
+          "editableUrl": "Düzenlenebilir URL",
+          "privatePage": "Özel Sayfa"
+        }
+      },
+      "Published": {
+        "congratulations": "Tebrikler!",
+        "nowLive": "Hatıra sayfan hazır. Bu dijital alanda artık sevdiğinin hatıralarını yaşatabilirsin.",
+        "memoryPublished": "Anınız yayımlandı.",
+        "condolencePublished": "Taziye mesajınız yayımlandı.",
+        "donationPublished": "Bağışınız kaydedildi.",
+        "copyLink": "Bağlantıyı Kopyala",
+        "viewMemorial": "Sayfayı Görüntüle"
+      }
+    }
+  },
+  "VisitMemorial": {
+    "BrowseMemorials": {
+      "title": "Hatırlandıkça Sonsuza",
+      "description": "Hayatlara dokunan insanların benzersiz hikâyelerini keşfedin."
+    },
+    "FeaturedCarousel": {
+      "title": "Parıldayan Hatıralar",
+      "description": "Dünyanın dört bir yanından öne çıkan hatıra sayfalarını keşfedin."
+    },
+    "MemorialCover": {
+      "viewMemorial": "Hatıra Sayfasını Görüntüle"
+    },
+    "MemorialInfo": {
+      "addMemory": "Anı Ekle",
+      "addCondolence": "Taziye Mesajı Ekle",
+      "addWreath": "Çelenk Sipariş Et",
+      "previewInfo": "Bu, hatıra sayfanızın önizlemesidir, sadece siz görebilirsiniz.",
+      "linkCopied": "Bağlantı kopyalandı",
+      "linkCopiedDetail": "Hatıra sayfası bağlantısı panonuza kopyalandı.",
+      "Edit": {
+        "editFrame": "Çerçeveyi Düzenle",
+        "editTribute": "Hatıra Sanatını Düzenle",
+        "editImage": "Resmi Düzenle",
+        "editCoverImage": "Kapak Resmini Düzenle",
+        "editLivePortrait": "Canlı Portreyi Düzenle",
+        "addSimmTag": "SimmTag® ekle",
+        "editSimmTag": "SimmTag®'i Düzenle",
+        "editLocation": "Konumu Düzenle",
+        "editIdentity": "Kimliği Düzenle",
+        "editAbout": "Hakkında Düzenle",
+        "editUrl": "URL'yi Düzenle",
+        "editVisibility": "Görünürlüğü Düzenle",
+        "editMusic": "Müziği Düzenle",
+        "deleteMemorial": "Hatıra Sayfasını Sil",
+        "deleteMemorialDescription": "Bu hatıra sayfası silinecek. Devam etmek istiyor musun?",
+        "memorialDeletedSuccessfullyTitle": "Hatıra Sayfası Silindi",
+        "memorialDeletedSuccessfullyDescription": "Anma sayfası ve tüm içerikleri silindi.",
+        "buyPhysicalSimmTag": "Fiziksel SimmTag® Al",
+        "unlistedInfo": "Sadece bağlantıya sahip kişiler bu hatıra sayfasına erişebilir.",
+        "publicInfo": "Bu hatıra sayfası herkese açıktır."
+      }
+    },
+    "MemorialStats": {
+      "views": "Görüntülenme",
+      "likes": "Beğeni",
+      "flowers": "Çiçek",
+      "trees": "Dikilen Ağaç",
+      "candles": "Mum",
+      "memories": "Anılar",
+      "condolences": "Taziyeler",
+      "donations": "Bağışlar"
+    },
+    "TopContributors": {
+      "flowers": "Anısına Bırakılan Çiçekler",
+      "candles": "Anısına Bırakılan Mumlar",
+      "donations": "Anısına Yapılan Bağışlar",
+      "trees": "Anısına Dikilen Fidanlar",
+      "noContributors": "Henüz katkıda bulunan yok."
+    },
+    "Tabs": {
+      "wreaths": "Çelenkler",
+      "memories": "Anılar",
+      "condolences": "Taziyeler",
+      "lifeStory": "Yaşam Öyküsü",
+      "waitingApprovals": "Onay Bekleyenler",
+      "missingLifeStory": "Yaşam öyküsü mevcut değil.",
+      "contributionPreviewInfo": "Gösterilen Anılar, Taziyeler ve Yaşam Öyküsü örnek niteliğindedir. Yayınlanan hatıra sayfasında yer almayacaktır."
+    }
+  },
+  "PhoneNumberValidation": {
+    "enterPhoneNumberTitle": "Lütfen telefon numaranızı doğrulayın",
+    "enterPhoneNumberDescription": "Size bir kod içeren SMS göndereceğiz, lütfen telefon numaranızı girin.",
+    "failedToSendCode": "Kod gönderilemedi. Lütfen telefon numaranızı kontrol edin ve tekrar deneyin.",
+    "phoneNumberIsRequired": "Lütfen telefon numaranızı girin.",
+    "enterYourCode": "Kodunuzu buraya girin",
+    "resendCode": "Kod almadınız mı? <resend>Yeni kod gönder</resend>.",
+    "invalidCode": "Kod geçersiz. Lütfen tekrar dene.",
+    "verificationDoneTitle": "Telefon numaran onaylandı.",
+    "verificationDoneMessage": "Şimdi hatıraları yaşatmanın zamanı."
+  },
+  "Shop": {
+    "comingSoon": "Yakında Geliyor",
+    "addToCart": "Sepete Ekle",
+    "joinWaitlist": "Bekleme Listesine Katıl",
+    "alreadyInWaitlist": "Bekleme Listesindesiniz",
+    "Purchase": {
+      "memorialInfo": "Hatıra Sayfası Bilgisi",
+      "addressInfo": "Adres Bilgisi",
+      "finalizeOrder": "Siparişinizi Tamamlayın",
+      "selectMemorial": "Bir Hatıra Sayfası Seçin",
+      "showMemorial": "Hatıra Sayfasını Göster",
+      "changeMemorial": "Hatıra Sayfasını Değiştir",
+      "cancellationTerms": "İptal, İade ve Cayma Koşulları",
+      "consent": "<terms>Ön Bilgilendirme Koşulları</terms>’nı ve <contract>Mesafeli Satış Sözleşmesi</contract>’ni okudum, onaylıyorum.",
+      "missingConsent": "Ön Bilgilendirme Koşulları ve Mesafeli Satış Sözleşmesi'ni kabul etmelisiniz.",
+      "gdprSales": "<gdpr>Satın Alım Faaliyetleri Kapsamında Aydınlatma Metni</gdpr>’ni okudum, anladım.",
+      "missingGdpr": "Satın Alım Faaliyetleri Kapsamında Aydınlatma Metni'ni kabul etmelisiniz."
+    }
+  },
+  "SearchResults": {
+    "matchingResults": "Eşleşen Sonuçlar",
+    "exploreFeatured": "Öne çıkan hatıra sayfalarına göz atmak ister misiniz?"
+  },
+  "CreateMemory": {
+    "title": "Anı Oluştur",
+    "Stages": {
+      "About": {
+        "invalidDateOfMemory": "Lütfen geçerli bir anı tarihi girin."
+      },
+      "Tribute": {
+        "stageDescription": "Paylaşımınızı bir sanat eserine dönüştürün."
+      },
+      "Donate": {
+        "question": "TEMA Vakfı'na bir ağaç bağışlamak ister misiniz?"
+      },
+      "Preview": {
+        "previewInfo": "Bu, anı sayfanızın önizlemesidir, sadece siz görebilirsiniz."
+      }
+    }
+  },
+  "CreateCondolence": {
+    "title": "Taziye Mesajı Paylaş",
+    "Stages": {
+      "About": {
+        "thoughtPrayers": "Düşüncelerinizi ve dualarınızı içeren bir mesaj bırakın.",
+        "questionListHint": "Aşağıdaki sorular, anınızı yazmanıza yardımcı olabilir.",
+        "textInputHint": "Taziyelerinizi buraya yazın...",
+        "condolenceWithoutWriting": "Yazmadan taziye mesajı gönder",
+        "questionList": {
+          "firstImpression": "{name} hakkında ilk izleniminiz neydi?",
+          "sensReminds": "{name} size hangi şarkı, koku veya yiyeceği hatırlatıyor?",
+          "passionateAbout": "{name} sizce neye tutkuluydu?",
+          "wereHere": "{name} burada olsaydı ona ne söylerdiniz?",
+          "usedToSay": "{name} her zaman söylerdi?",
+          "believedIn": "Hayatta en çok neye inanır, neyi savunurdu?",
+          "knownFor": "İnsanlara karşı daha çok hangi yönüyle tanınırdı (merhametli, disiplinli, neşeli, cesur…)?",
+          "strongestSide": "Sizce onun en güçlü yanı neydi?",
+          "mostImportantValue": "Onun için en önemli değer neydi (adalet, sevgi, dürüstlük, sadakat…)?",
+          "viewOnLife": "Hayata karşı nasıl bir bakışı vardı?",
+          "firstMemory": "Onu hatırladığınızda aklınıza ilk gelen anı nedir?",
+          "firstRecall": "Onu hatırladığınızda aklınıza ilk gelen hangi davranışı ya da sözü oluyor?",
+          "leftBehind": "Sizce ardında nasıl bir iz bıraktı?",
+          "threeWords": "Onu en iyi tanımlayan üç kelime ne olurdu?",
+          "strongestFeeling": "Sizce onun dünyaya bıraktığı en güçlü duygu neydi?",
+          "ifHereToday": "Bugün yanınızda olsaydı, size hangi sözüyle ya da davranışıyla güç verirdi?",
+          "whenHurt": "Kırıldığında ya da incindiğinde tavrı nasıldı?",
+          "buildingTrust": "İnsanlarla ilişkisinde güveni nasıl kurardı?",
+          "empathy": "Bir başkasının acısı karşısında nasıl tepki verirdi?",
+          "characterLegacy": "Sizce o, çevresindekilere hangi karakter özelliğini miras bıraktı?"
+        }
+      },
+      "Tribute": {
+        "stageDescription": "Saygınızı bir sanat eserine dönüştürün."
+      },
+      "Donate": {
+        "question": "TEMA Vakfı'na bir ağaç bağışlamak ister misiniz?"
+      },
+      "Preview": {
+        "previewInfo": "Bu, anı sayfanızın önizlemesidir, sadece siz görebilirsiniz."
+      }
+    }
+  },
+  "Donate": {
+    "tagline": "{name} anısına ağaç bağışlayın.",
+    "infoText": "Bağış yapılan kurumdan sizlere sertifika gönderilecektir."
+  },
+  "DeleteContribution": {
+    "title": {
+      "memory": "Anıyı Sil",
+      "condolence": "Taziyeyi Sil",
+      "donation": "Bağışı Sil"
+    },
+    "description": {
+      "memory": "Bu anıyı silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
+      "condolence": "Bu taziye mesajını silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
+      "donation": "Bu bağışı silmek istediğinizden emin misiniz? Bu işlem geri alınamaz."
+    },
+    "successTitle": {
+      "memory": "Anı Silindi",
+      "condolence": "Taziye Silindi",
+      "donation": "Bağış Silindi"
+    },
+    "successDescription": {
+      "memory": "Anınız başarıyla silindi.",
+      "condolence": "Taziye mesajınız başarıyla silindi.",
+      "donation": "Bağışınız başarıyla silindi."
+    }
+  },
+  "Donation": {
+    "treesToTema": "TEMA Vakfı'na {count, plural, =0 {hiç ağaç} =1 {# ağaç} other {# ağaç}} bağışlandı."
+  },
+  "Notification": {
+    "memorial-like": "{name} hatıra sayfanızı beğendi.",
+    "memory-report": "{name} bir anıyı şikayet etti.",
+    "condolence-report": "{name} bir taziye mesajını şikayet etti.",
+    "memory-request": "{name} bir anı eklemek istedi.",
+    "condolence-request": "{name} bir taziye mesajı eklemek istedi.",
+    "memory-approved": "Anınız onaylandı.",
+    "condolence-approved": "Taziye mesajınız onaylandı.",
+    "donation-report": "{name} bir bağışı şikayet etti.",
+    "noNotifications": "Bildirim yok.",
+    "noNewMessages": "Yeni mesaj yok."
+  },
+  "About": {
+    "aboutText": "Simmortals, vefat eden sevdiklerinizle vedalaşma sürecinde yanınızda olmak, onların hatıralarını yaşatmanızı ve gelecek nesillere aktarmanızı desteklemek için geliştirilmiş, saygı temelli bir teknoloji platformudur. Dijital çağın sunduğu imkânları derin bir duygusal incelik ve farkındalıkla birleştirir. Yapay zekadan lokasyon teknolojilerine ve sosyal fayda modellerine kadar pek çok çözümle; bireylerin, ailelerin ve toplumların yas ve hatırlama süreçlerine yeni bir boyut kazandırır. Simmortals, gelenekseli dijitalle, bireyseli kolektifle, geçmişi gelecekle buluşturan bir anma biçimidir.\n\n<bold>Çünkü herkes hatırlanmaya değer.</bold>",
+    "purposeTitle": "Misyonumuz",
+    "purposeText": "Anıları özenle korumak, duygusal süreçleri teknolojiyle desteklemek ve her bir yaşam öyküsünü saygıyla ölümsüzleştirmek.",
+    "promiseTitle": "Vizyonumuz",
+    "promiseText": "Farklı yas kültürlerinden gelen insanların buluşabildiği; hatıraların yaşatıldığı ve iyiliğe dönüştüğü küresel bir dijital ağ kurmak.",
+    "valuesTitle": "Değerlerimiz",
+    "Values": {
+      "connection": {
+        "title": "Bağ",
+        "description": "Teknoloji ile insanları, anıları ve nesilleri birbirine yakınlaştırıyoruz. Kurduğumuz her bağ, ortak hafızanın dokusunda yeni bir ilmek yaratıyor."
+      },
+      "innovation": {
+        "title": "İnovasyon",
+        "description": "Teknolojimizi insan bağlarını derinleştirmek ve anıları daha önce mümkün olmayan biçimlerde onurlandırmak için sürekli geliştiriyoruz."
+      },
+      "creativity": {
+        "title": "Yaratıcılık",
+        "description": "Duyguyu, estetiği ve kalıcılığı bir araya getiren, özgün görsel ve etkileşimli deneyimler tasarlıyoruz."
+      },
+      "responsibility": {
+        "title": "Sorumluluk",
+        "description": "Her hikâyeyi korur ve onurlandırırken, daha iyi bir geleceğe katkı sağlama ve topluma fayda sunma sorumluluğunu üstleniyoruz."
+      },
+      "protection": {
+        "title": "Koruma",
+        "description": "Anıların nesiller boyu canlı kalmasını ve güvenli sistemler aracılığıyla erişilebilir olmasını sağlıyoruz."
+      }
+    }
+  },
+  "Contact": {
+    "success": "Mesajınız başarıyla gönderildi.",
+    "gdpr": "<gdpr>İletişim Formu Aydınlatma Metni</gdpr>’ni okudum ve anladım.",
+    "missingGdpr": "İletişim Formu Aydınlatma Metni'ni kabul etmelisiniz."
+  },
+  "Suspended": {
+    "title": "Hesabınız Askıya Alındı",
+    "description": "Hesabınız, hizmet şartlarımızı ihlal ettiği için askıya alındı. Daha fazla bilgi için lütfen destek ekibimizle iletişime geçin.",
+    "contactSupport": "Bize Ulaşın"
+  },
+  "Report": {
+    "title": "İçeriği Bildir",
+    "reasonPrompt": "Bu içeriği neden bildiriyorsunuz?",
+    "buttonLabel": "Raporu Gönder",
+    "successTitle": "Rapor Gönderildi",
+    "successMessage": "Raporunuz için teşekkür ederiz. Kurallarımızı ihlal eden içerikler incelenecek ve gerekirse kaldırılacaktır.",
+    "continueBrowsing": "Göz Atmaya Devam Et",
+    "Options": {
+      "dislike": "Bu içeriği beğenmiyorum",
+      "bullying": "Zorbalık veya taciz",
+      "harmful": "Zararlı veya tehlikeli davranış",
+      "violence": "Şiddet veya tehlikeli içerik",
+      "promoting": "Kısıtlı öğeleri satmak veya tanıtmak",
+      "explicit": "Çıplaklık veya cinsel içerik",
+      "scam": "Dolandırıcılık, sahtekarlık veya spam",
+      "false-info": "Yanlış veya yanıltıcı bilgi",
+      "copyright": "Telif hakkı veya ticari marka ihlali",
+      "illegal": "Yasa dışı içerik"
+    }
+  },
+  "AiGreeting": {
+    "VoiceClone": {
+      "title": "Ses Klonu Oluştur",
+      "description": "Bir ses klonu oluşturmak için en fazla 3 ses dosyası yükleyin.",
+      "maxFilesReached": "Maksimum dosya sayısına ulaştınız.",
+      "pleaseUploadAtLeastOneFile": "Lütfen en az bir ses dosyası yükleyin."
+    },
+    "ImageSelection": {
+      "title": "Bir Görsel Yükleyin"
+    },
+    "Pending": {
+      "title": "Video Üretiliyor",
+      "info": "Videonuz oluşturuluyor. Bu işlem birkaç dakika sürebilir."
+    },
+    "Result": {
+      "title": "Hatıra Teşekkür Videosu"
+    }
+  },
+  "HomePricing": {
+    "title": "Anılarınıza sonsuzluk kazandıracak planları keşfedin.",
+    "buttonLabel": "Hatıra Sayfası Oluşturun",
+    "disclaimer": "*Gelirlerin %10'u Türk Eğitim Vakfı'na bağışlanacaktır.",
+    "Features": {
+      "keepForever": "Hatıraları sonsuza dek saklama",
+      "addImages": "Fotoğraf ekleme",
+      "customFrame": "Çerçeve ekleme",
+      "customTribute": "Mum & Çiçek ekleme",
+      "digitalSimmTag": "SimmTag® ekleme",
+      "timelineView": "Zaman çizelgesi görünümü",
+      "editableUrl": "Kişiselleştirilebilir bağlantı",
+      "privatePage": "Özel Sayfa"
+    }
+  },
+  "HomeVideosSection": {
+    "SimmTagSection": {
+      "description": "<simmtag>SimmTag®</simmtag> ile sevdiğinizin yaşam öyküsüne ve onun adına paylaşılan hatıralara açılan bir pencere oluşturun.",
+      "buttonLabel": "SimmTag Oluştur"
+    },
+    "DigitalSimmTagSection": {
+      "description": "<simmtag>SimmTag®</simmtag> ile sevdiğinizin hatıra sayfasından mezar yerinin konumuna ulaşmanın kolay ve güvenilir bir yolunu yaratın.",
+      "buttonLabel": "Hatıra Sayfası Oluştur"
+    },
+    "TimelineSection": {
+      "description": "Sevdiğinizin yaşam öyküsünü dönüm noktalarıyla keşfedin. Her anı zaman çizelgesinde canlansın.",
+      "buttonLabel": "Hatıra Sayfası Oluştur"
+    },
+    "DonationSection": {
+      "description": "Sevgiyle anılan hayatları, zamanın ötesine taşınan hikayeleri ve kalpten kalbe aktarılan hatıraları keşfedin.",
+      "buttonLabel": "Hatıra Sayfalarını Keşfet"
+    }
+  },
+  "CookieBanner": {
+    "title": "Çerez Kullanımı",
+    "description": "Deneyiminizi iyileştirmek için çerezler kullanıyoruz. Siteyi kullanmaya devam ederek çerez kullanımımızı kabul etmiş olursunuz.",
+    "cookiePolicy": "Çerez Politikası",
+    "allowAll": "Tümünü Kabul Et",
+    "essentialOnly": "Sadece Zorunlu",
+    "cookieSettings": "Çerez Ayarları",
+    "settingsTitle": "Çerez Ayarları",
+    "essentialCookies": "Zorunlu Çerezler",
+    "essentialCookiesDescription": "Web sitesinin düzgün çalışması için gereklidir.",
+    "marketingCookies": "Pazarlama Çerezleri",
+    "marketingCookiesDescription": "Kişiselleştirilmiş reklamlar sunmak için kullanılır.",
+    "saveSettings": "Ayarları Kaydet",
+    "cancel": "İptal"
+  },
+  "FAQ": {
+    "title": "Sıkça Sorulan Sorular",
+    "General": {
+      "title": "Genel Bilgiler",
+      "whatIsSimmortals": {
+        "question": "Simmortals nedir?",
+        "answer": "Simmortals, sevdiklerinizi dijital dünyada onurlandırmak ve hatıralarını kalıcı kılmak için geliştirilmiş, saygı temelli bir anma platformudur. Kullanıcılar, yakınları için hatıra sayfaları açabilir, anılar paylaşabilir ve onları sevenlerle duygusal ve nesilden nesle aktarılabilecek bir bağ kurabilir."
+      },
+      "whatIsMemorialPage": {
+        "question": "Hatıra sayfası nedir?",
+        "answer": "Hatıra sayfaları, sevdiklerinizin yaşamlarını, anılarını ve yakınlarının mesajlarını bir araya getiren kişisel dijital sayfalardır. Bu sayfalarda yazılı anılar, fotoğraflar, videolar, taziye mesajları ve dijital etkileşimler yer alır."
+      },
+      "whoCanUse": {
+        "question": "Kimler kullanabilir?",
+        "answer": "Sevdiklerinin hikâyesini, anılarını, hatıralarını yaşatmak isteyen herkes Simmortals'ı kullanabilir."
+      },
+      "howToCreate": {
+        "question": "Nasıl hatıra sayfası oluşturabilirim?",
+        "answer": "Simmortals.com sayfasından kayıt olduktan sonra \"Hatıra Sayfası Oluştur\" butonuna tıklayarak sayfayı oluşturmaya başlayabilirsiniz. Sayfa içindeki yönlendirmelerle sevdikleriniz adına fotoğraf, video, yazı ve paylaşımlarla zenginleştirilmiş sayfanızı birkaç dakika içinde oluşturabilirsiniz."
+      },
+      "isFree": {
+        "question": "Simmortals'a kayıt olup hatıra sayfası açmak ÜCRETSİZ mi?",
+        "answer": "Evet. Simmortals'a üye olmak ücretsizdir. Hatıra sayfaları ücretsiz olarak oluşturulabilirsiniz. Özel tasarımlar ve ek özellikler için premium planlar da sunulmaktadır."
+      }
+    },
+    "CreatingManaging": {
+      "title": "Hatıra Sayfası Oluşturma ve Yönetimi",
+      "whoCanContribute": {
+        "question": "Hatıra sayfasına kimler katkıda bulunabilir?",
+        "answer": "Ziyaretçiler anı, taziye veya medya içeriği paylaşabilir. Tüm içerikler, sayfa yöneticisinin onayından geçmektedir."
+      },
+      "howLongActive": {
+        "question": "Bir hatıra sayfası ne kadar süre yayında kalır?",
+        "answer": "Sayfa sahibi tarafından silinmediği sürece yayında kalır. Ancak, eğer sayfa ile ilgili şikayetler oluşmuşsa, SimmortalS o hatıra sayfasını silme hakkını saklı tutar."
+      },
+      "arePublic": {
+        "question": "Hatıra sayfaları herkese açık mı olur?",
+        "answer": "Hatıra sayfaları varsayılan olarak herkese açıktır ve \"Hatıra Sayfaları\" bölümünde arama yapıldığında görüntülenebilir. Ancak premium sayfalarda, sayfa yöneticisi gizlilik ayarlarını özelleştirebilir; dilerse sayfayı herkese açık bırakabilir ya da yalnızca bağlantıya sahip kişilerin erişimine izin verebilir."
+      }
+    },
+    "PrivacySafety": {
+      "title": "Gizlilik ve Güvenlik",
+      "howToReport": {
+        "question": "İstenmeyen içerikleri nasıl bildirebilirim?",
+        "answer": "İlgili içeriğin yanında bulunan \"Şikayet Et\" seçeneğini kullanabilir, gerekçenizi belirterek bildirimde bulunabilirsiniz."
+      },
+      "whatHappensReported": {
+        "question": "Uygunsuz içerikler veya hatıra sayfaları bildirilirse ne olur?",
+        "answer": "Topluluk kurallarını ihlal ettiği bildirilen içerikler öncelikle sayfa yöneticisi tarafından incelenir ve gerekli bulunması durumunda içerikler yayından kaldırılır. Hatıra sayfalarıyla ilgili yapılan bildirimler ise Simmortals moderasyon ekibi tarafından değerlendirilir; platformun etik kurallarına veya kullanım koşullarına aykırı bulunan sayfalar gerekli durumlarda yayından kaldırılır."
+      },
+      "howModerated": {
+        "question": "Hatıra sayfalarına yüklenen içerikler nasıl kontrol edilir?",
+        "answer": "Tüm içerikler, sayfa yöneticisinin onayına tabidir. Yönetici, içeriği kaldırma hakkına sahiptir."
+      }
+    },
+    "PaymentsPlans": {
+      "title": "Ödeme ve Planlar",
+      "premiumFeatures": {
+        "question": "Premium planlar neler sunar?",
+        "answer": "Premium plan kullanıcıları, sevdiklerinin hatıralarını daha derin ve etkileyici şekilde yaşatmaya yönelik özelliklere erişim sağlar:\n\n• Kişiselleştirilmiş hatıra sayfası bağlantısı\n• Sadece link gönderdiğiniz kişilere erişim opsiyonu\n• Fotoğraflara hayat veren animasyon seçenekleri\n• Zarif çerçeve tasarımları\n• Özelleştirilmiş dijital çiçekler ve mumlar\n• Konum atayabileceğiniz SimmTag® özelliği\n• Mezar yeri konumunu işaretlemeye olanak tanıyan QR kod entegrasyonu\n• Arka plan müziği seçenekleri\n• Zaman çizelgesiyle canlandırılmış Yaşam Öyküsü özelliği\n• Yapay zekâ ile oluşturulmuş ses klonu özelliği"
+      },
+      "howToPay": {
+        "question": "Nasıl ödeme yapabilirim?",
+        "answer": "Ödeme işlemlerinizi güvenceli bir şekilde kredi kartı veya banka kartınız ile yapabilirsiniz. Üyelikler aylık veya yıllık olarak yapılabilir."
+      },
+      "howToCancel": {
+        "question": "Premium aboneliğimi nasıl iptal edebilirim?",
+        "answer": "Profilinizde bulunan ''Abonelikleri Yönet'' bölümünden mevcut planınızı görüntüleyebilir ve \"Aboneliği İptal Et\" seçeneğiyle işlemi gerçekleştirebilirsiniz."
+      },
+      "whatHappensCancel": {
+        "question": "Aboneliğimi iptal edersem ne olur?",
+        "answer": "Premium aboneliğinizi iptal ettiğiniz taktirde hatıra sayfanızı ücretsiz versiyonda kullanmaya devam edebilirsiniz. Premium özellikler devre dışı kalır ancak sayfanız yayında kalmaya devam eder. Dilediğiniz zaman premium aboneliğinizi yeniden aktif hâle getirebilirsiniz."
+      }
+    },
+    "TributesInteractions": {
+      "title": "Anılar ve Etkileşimler",
+      "whatAreDigitalTributes": {
+        "question": "Sanal çiçek ve mum nedir?",
+        "answer": "Sanal çiçekler ve mumlar, tıpkı bir mezarlığa çiçek bırakmak veya mum yakmak gibi ziyaretçilerin hatıra sayfalarına dijital olarak bıraktıkları saygı ve anma ifadeleridir."
+      },
+      "whoCanLeave": {
+        "question": "Hatıra sayfalarında kimler anı paylaşabilir veya taziye bırakabilir?",
+        "answer": "Tüm ziyaretçiler, sayfada anı paylaşmak veya taziye mesajı bırakabilir. Ancak bu içerikleri sayfa sahibi isterse yayından kaldırabilir."
+      }
+    },
+    "KeyFeatures": {
+      "title": "Temel Özellikler",
+      "whatIsSimmTag": {
+        "question": "SimmTag® nedir, nasıl çalışır?",
+        "answer": "SimmTag®, kaybettiğiniz sevdiğinizin mezar taşına yerleştirilen, üzerinde QR kod barındıran, şık tasarımlı fiziksel bir üründür. Ziyaretçiler, bu kodu telefonlarıyla okutarak dijital hatıra sayfasına erişebilirler veya sitedeki SimmTag® ile doğru eşleşmeden sonra mezar lokasyonunu görebilirler."
+      },
+      "howToOrderSimmTag": {
+        "question": "SimmTag® siparişini nasıl oluşturabilirim?",
+        "answer": "SimmTag® ürünlerini Simmortals mağazası üzerinden sipariş verebilirsiniz Sipariş sırasında kişisel bir mesaj ekleyebilir ve önizleme yapabilirsiniz."
+      },
+      "whatDoesQRDo": {
+        "question": "Hatıra sayfalarındaki QR kod (SimmTag®) ne işe yarar?",
+        "answer": "QR kod (SimmTag®), sayfa yöneticisi tarafından kişinin mezar lokasyonu ile eşleştirilir."
+      },
+      "whatIsTimeline": {
+        "question": "Yaşam Öyküsü (Tarihsel Zaman Çizelgesi) nedir?",
+        "answer": "Kişinin hayatına ait yüklenmiş anıların tarihsel bir zaman çizelgesi üzerinde gösterildiği, yazı, fotoğraf ve videolarla desteklenen özel bir bölümdür. Premium sayfalarda otomatik olarak oluşturulur."
+      },
+      "canShare": {
+        "question": "Sayfayı sosyal medya üzerinden veya doğrudan çevremdekilerle paylaşabilir miyim?",
+        "answer": "Evet. Her sayfa için özel bağlantı ve paylaşım butonları bulunur."
+      }
+    },
+    "Support": {
+      "title": "Destek ve İletişim",
+      "howToGetSupport": {
+        "question": "Nasıl teknik destek alabilirim?",
+        "answer": "Her türlü soru veya teknik sorun için <link>iletişim</link> formunu doldurabilirsiniz."
+      },
+      "howToDeletePage": {
+        "question": "Hatıra sayfamı silmek istersem ne yapmalıyım?",
+        "answer": "Sayfa ayarları üzerinden \"Sayfayı Sil\" seçeneğini kullanarak sayfanızı kalıcı olarak silebilirsiniz."
+      },
+      "howToDeleteAccount": {
+        "question": "Kullanıcı hesabımı nasıl silebilirim?",
+        "answer": "Profil sekmesi üzerinden \"Hesabımı Sil\" seçeneğini kullanarak hesabınızı silebilirsiniz."
+      }
+    }
+  }
+}

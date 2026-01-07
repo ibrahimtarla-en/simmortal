@@ -1,0 +1,19 @@
+@utility bg-gradient-card-fill {
+  background: var(--gradient-card-fill);
+  background-color: black;
+}
+
+@utility bg-gradient-mauveine {
+  background: var(--gradient-mauveine);
+}
+
+@utility bg-gradient-ghost {
+  background: var(--gradient-ghost);
+}
+
+@utility cover-mode {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}

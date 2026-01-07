@@ -1,0 +1,869 @@
+{
+  "Common": {
+    "yes": "Yes",
+    "homePage": "Home Page",
+    "about": "About",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "create": "Create",
+    "signUp": "Sign Up",
+    "login": "Login",
+    "logout": "Logout",
+    "profile": "Profile",
+    "memorials": "Memorials",
+    "myPages": "My Pages",
+    "createMemorial": "Create a Memorial",
+    "or": "or",
+    "view": "View",
+    "viewAll": "View All",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "communityGuidelines": "Community Standards",
+    "gdpr": "Data Protection and Processing GDPR Disclosure Text",
+    "born": "Born",
+    "died": "Died",
+    "dateOfBirth": "Date of Birth",
+    "dateOfPassing": "Date of Passing",
+    "country": "Country",
+    "nationality": "Nationality",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "password": "Password",
+    "relation": "Relation",
+    "location": "Location",
+    "send": "Send",
+    "verify": "Verify",
+    "continue": "Continue",
+    "free": "Free",
+    "premium": "Premium",
+    "back": "Back",
+    "next": "Next",
+    "shop": "Store",
+    "all": "All",
+    "checkout": "Checkout",
+    "publish": "Publish",
+    "viewDetails": "View Details",
+    "contribute": "Contribute",
+    "search": "Search",
+    "noResults": "No results found.",
+    "annual": "Annual",
+    "monthly": "Monthly",
+    "month": "month",
+    "year": "year",
+    "recommended": "Recommended",
+    "previewMemorialButton": "Preview Memorial Page",
+    "previewMemoryButton": "Preview Memory",
+    "draft": "Draft",
+    "published": "Published",
+    "removed": "Removed",
+    "someone": "Someone",
+    "total": "Total",
+    "address": "Address",
+    "postCode": "Post Code",
+    "city": "City",
+    "state": "State",
+    "phoneNumber": "Phone Number",
+    "approve": "Approve",
+    "reject": "Reject",
+    "save": "Save",
+    "submit": "Submit",
+    "report": "Report",
+    "change": "Change",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "areYouSure": "Are you sure?",
+    "zoom": "Zoom",
+    "processing": "Processing",
+    "reset": "Reset",
+    "play": "Play",
+    "message": "Message",
+    "contributionDisclaimer": "Contributions that not truthful or offensive will be deleted by the administrators.",
+    "gdprForm": "GDPR Form",
+    "donate": "Donate",
+    "saplings": "Saplings",
+    "updatesSavedTitle": "Changes Saved",
+    "updatesSavedDescription": "Your updates have been saved.",
+    "SortOptions": {
+      "title": "Sort by",
+      "recent": "Most Recent",
+      "likes": "Most Likes"
+    },
+    "honoredTheirMemory": "Honored their memory with one {name}",
+    "FrameNames": {
+      "default": "Grey Frame",
+      "aurelian-sovereign": "Aurelian Sovereign",
+      "baroque-argentum": "Baroque Argentum",
+      "baroque-royale": "Baroque Royale",
+      "chromeline-elegance": "Chromeline Elegance",
+      "frosted-sovereign": "Frosted Sovereign",
+      "golden-heritage": "Golden Heritage",
+      "imperial-gilded-crest": "Imperial Gilded Crest",
+      "majestic-aureate": "Majestic Aureate",
+      "silver-nocturne": "Silver Nocturne",
+      "sovereign-silverleaf": "Sovereign Silverleaf"
+    },
+    "TributeNames": {
+      "default": "No Tribute",
+      "amethyst-tranquility": "Amethyst Tranquility",
+      "blossom-of-grace": "Blossom of Grace",
+      "crimson-devotion": "Crimson Devotion",
+      "flames-of-remembrance": "Flames of Remembrance",
+      "frostlight-harmony": "Frostlight Harmony",
+      "golden-serenity": "Golden Serenity",
+      "lunar-serenity": "Lunar Serenity",
+      "midnight-serenity": "Midnight Serenity",
+      "ocean-of-light": "Ocean of Light",
+      "royal-sunrise": "Royal Sunrise",
+      "celestial-bloom": "Celestial Bloom",
+      "midnight-elegy": "Midnight Elegy"
+    },
+    "DecorationNames": {
+      "no-decoration": "No Decoration",
+      "amethera-rose": "Amethera Rose",
+      "amethyst-ravel": "Amethyst Ravel",
+      "aurelia-bloom": "Aurelia Bloom",
+      "azure-peonia": "Azure Peonia",
+      "celestia-lily": "Celestia Lily",
+      "circle-of-serenity": "Circle of Serenity",
+      "coralia-hibiscus": "Coralia Hibiscus",
+      "frostaria-bloom": "Frostaria Bloom",
+      "golden-reverie": "Golden Reverie",
+      "ivory-whisper": "Ivory Whisper",
+      "lunaria-lily": "Lunaria Lily",
+      "nocturne-calla": "Nocturne Calla",
+      "rosalia-peony": "Rosalia Peony",
+      "seraphine-calla": "Seraphine Calla",
+      "solaria-bloom": "Solaria Bloom",
+      "solaris-hibiscus": "Solaris Hibiscus",
+      "sonata-bloom": "Sonata Bloom",
+      "trinity-of-light": "Trinity of Light",
+      "veloria-lisianthus": "Veloria Lisianthus"
+    }
+  },
+  "Placeholder": {
+    "firstName": "John",
+    "lastName": "Good",
+    "email": "johngood@gmail.com",
+    "select": "Select",
+    "phoneNumber": "(555) 123-**-**",
+    "dateOfMemory": "Do you remember the date?",
+    "userPromptMemory": "Write your memory here...",
+    "address": "Address",
+    "postCode": "12345",
+    "city": "New York",
+    "state": "California",
+    "memorialPersonNamePlaceholder": "Clara Salvatore",
+    "dateOfBirthPlaceholder": "13 May 1972",
+    "dateOfPassingPlaceholder": "28 Jun 2015",
+    "placeOfDeathPlaceholder": "Istanbul, Turkey",
+    "placeOfBirthPlaceholder": "Ankara, Turkey",
+    "message": "Your message here..."
+  },
+  "Profile": {
+    "editProfile": "Edit Profile",
+    "invoices": "Invoices",
+    "manageSubscriptions": "Manage Subscriptions",
+    "deleteAccount": "Delete Account",
+    "areYouSure": "Are you sure?",
+    "deleteAccountDescription": "Once you delete your account, there is no going back.",
+    "changesSavedTitle": "Profile Updated",
+    "changesSavedDescription": "Your profile details were updated successfully.",
+    "Tabs": {
+      "myWreaths": "My Wreaths",
+      "likedWreaths": "Liked Wreaths",
+      "myMemories": "My Memories",
+      "myCondolences": "My Condolences",
+      "likedMemories": "Liked Memories",
+      "likedCondolences": "Liked Condolences"
+    }
+  },
+  "Error": {
+    "generic": "Something went wrong. Please try again later.",
+    "invalidName": "Please enter a valid name.",
+    "invalidLastName": "Please enter a valid last name.",
+    "missingCountry": "Please select a country.",
+    "missingRelation": "Please select your relation.",
+    "invalidDateOfBirth": "Please enter a valid date of birth.",
+    "invalidDateOfPassing": "Please enter a valid date of passing.",
+    "invalidPlaceOfDeath": "Please enter a valid place of death.",
+    "invalidPlaceOfBirth": "Please enter a valid place of birth.",
+    "missingPicture": "Please upload a picture.",
+    "invalidCity": "Please enter a valid city.",
+    "invalidAddress": "Please enter a valid address.",
+    "invalidPostCode": "Please enter a valid postal code.",
+    "invalidState": "Please enter a valid state.",
+    "invalidPhoneNumber": "Please enter a valid phone number.",
+    "invalidEmail": "Please enter a valid email address.",
+    "missingMemorial": "Please select a memorial.",
+    "messageTooShort": "Message is too short.",
+    "locationErrorTitle": "Location Error",
+    "locationErrorMessage": "Unable to retrieve your location. Please ensure location services are enabled and try again.",
+    "birthAfterDeath": "Date of birth cannot be after date of passing.",
+    "messageTooLong": "Message is too long.",
+    "fileTooLarge": "You can upload files up to {size} MB in size."
+  },
+  "Footer": {
+    "copyright": "© <year></year> Simmortals. All rights reserved."
+  },
+  "SimmTag": {
+    "assignLocation": "Assign the Location",
+    "assignLocationDescription": "Please use the assign location feature while you are at the location of the memorial site to link it to the SimmTag.",
+    "confirmLocationButtonLabel": "Yes, I am near the memorial site",
+    "cancelLocationButtonLabel": "No, assign location later",
+    "assigningLocation": "Assigning Memorial Location...",
+    "noSimmTag": "No Location SimmTag®",
+    "locationAssignedTitle": "Location Assigned",
+    "locationAssignedMessage": "The location has been successfully assigned to the SimmTag®."
+  },
+  "MyPages": {
+    "title": "My Pages",
+    "noPages": "You have not created any memorial pages yet.",
+    "noDrafts": "You have no draft memorials.",
+    "noPublished": "You have no published memorials."
+  },
+  "HomePage": {
+    "title": "What We Remember Lives On",
+    "tagline": "Preserve the essence of those you’ve loved and lost. Create a memorial page where their story can live on.",
+    "FeaturesCarousel": {
+      "title": "A Place to Remember",
+      "memorial": {
+        "title": "Create a Memorial Page",
+        "description": "Celebrate a life well lived by creating a meaningful digital space."
+      },
+      "location": {
+        "title": "Share Their Resting Place",
+        "description": "A SimmTag® QR linked to their memorial page makes their resting place easy to find for family and friends."
+      },
+      "simmtag": {
+        "title": "Create a SimmTag®",
+        "description": "A SimmTag® QR at their resting place offers visitors a gentle and seamless way to access their memorial page."
+      },
+      "lifestory": {
+        "title": "Create a Life Story",
+        "description": "Craft a comprehensive life story that captures your loved one’s journey in meaningful detail."
+      },
+      "memory": {
+        "title": "Share Memories",
+        "description": "Keep their memory alive by sharing photos, videos, and stories."
+      },
+      "condolence": {
+        "title": "Send Condolences",
+        "description": "Honor their memory with heartfelt messages and words of comfort."
+      },
+      "donation": {
+        "title": "Honour with Purpose",
+        "description": "Let their memory take root. Honour them with tree saplings that grow in their name."
+      }
+    }
+  },
+  "SearchResults": {
+    "matchingResults": "Matching Results",
+    "exploreFeatured": "Would you like to explore the featured memorials?"
+  },
+  "FeaturedMemorial": {
+    "viewMemorial": "View Memorial"
+  },
+  "CreateMemorialBanner": {
+    "title": "Create a Memorial",
+    "description": "Let the light of loved one shine on through.",
+    "getStarted": "Get Started",
+    "namePlaceholder": "Please enter the name of the person"
+  },
+  "Elements": {
+    "GoogleButton": {
+      "label": "Continue with Google"
+    },
+    "FileUpload": {
+      "dragAndDrop": "Drag and drop a file",
+      "browseYourComputer": "Browse your device"
+    },
+    "TextArea": {
+      "max": "max"
+    }
+  },
+  "Auth": {
+    "welcomeBack": "Welcome back",
+    "rememberMe": "Remember me",
+    "newPassword": "New Password",
+    "forgotPassword": "Forgot password?",
+    "dontHaveAccount": "Don’t have an account?",
+    "createAccount": "Create an account",
+    "haveAccount": "Already have an account?",
+    "consent": "I have read and understood the <terms>Terms of Service</terms>, <community>Community Standards</community>, and the <gdpr>GDPR Disclosure Text within the scope of Membership Activities.</gdpr>",
+    "invalidEmail": "Please enter a valid email address.",
+    "invalidPassword": "Please enter a valid password.",
+    "wrongCredentials": "Wrong email or password.",
+    "noFirstName": "Please enter your first name.",
+    "noLastName": "Please enter your last name.",
+    "missingConsent": "You must agree to the terms and privacy policy.",
+    "passwordFormatError": "Password must contain at least 8 characters, including a number",
+    "verificationSuccess": "Your email is verified.\n\nYou can now start creating memorials.",
+    "verificationFailed": "Email verification failed",
+    "verificationFailedDescription": "We were unable to verify your email.",
+    "loginToRequestNewLink": "Please login to request a new verification link.",
+    "resendVerificationEmail": "Resend Verification Email",
+    "checkInbox": "Please check your inbox",
+    "linkSent": "Account activation link has been sent to the email address you provided.",
+    "didntGetVerificationEmail": "Didn't get the verification email? <resend>Send it Again</resend>",
+    "resetPassword": "Reset Password",
+    "resetPasswordSent": "A password reset link has been sent to {email}.\n\nDon’t forget to check your spam folder.",
+    "passwordChanged": "Your password has been updated."
+  },
+  "CreateMemorial": {
+    "title": "Create a Memorial",
+    "Stages": {
+      "identity": "Who Is This Memorial For?",
+      "about": "Whispers of the Past",
+      "url": "Create a Memorial URL",
+      "frame": "Choose a Frame",
+      "tribute": "Choose a Tribute",
+      "simmTag": "Choose a SimmTag®",
+      "music": "Choose Background Music",
+      "preview": "Preview",
+      "checkout": "Checkout",
+      "cover": "Cover Photo",
+      "livePortrait": "Live Portrait",
+      "Identity": {
+        "whoIsMemorialFor": "Who is this memorial page for?",
+        "relation": "Relation",
+        "placeOfBirth": "Place of Birth",
+        "placeOfDeath": "Place of Death",
+        "disclaimer": "Please note that providing false or misleading information may result in the cancellation or removal of the memorial page.",
+        "Relation": {
+          "family": "Family",
+          "partner": "Partner",
+          "colleague": "Colleague",
+          "friend": "Friend",
+          "other": "Other"
+        }
+      },
+      "Cover": {
+        "stageDescription": "Please select a cover photo for your memorial."
+      },
+      "About": {
+        "userPrompt": "Tell us about <name></name> in your own words.",
+        "writeInstead": "Would you like to write it down instead?",
+        "recordInstead": "Would you like to record your voice instead?",
+        "transcribing": "Transcribing your voice..."
+      },
+      "Url": {
+        "stageDescription": "You can customize your memorial link below.",
+        "urlRules": "Only use letters, numbers and hyphens. No spaces, symbols, or special characters allowed.",
+        "visibilityInfo": "Only people with the link can access this memorial.",
+        "urlTooShort": "URL is too short.",
+        "urlTooLong": "URL is too long.",
+        "urlInvalid": "URL can only contain lowercase letters, numbers, and hyphens. Must start and end with a letter or number.",
+        "urlNotAvailable": "This URL is not available. Please try another."
+      },
+      "LivePortrait": {
+        "stageDescription": "Choose a live portrait effect to bring your memorial to life.",
+        "hint": "Live Portraits use subtle animations to create a dynamic and engaging experience.\nIt may take several minutes to process your live portrait after publishing.",
+        "disclaimer": "Videos are representation of the effect.\nYour live portrait will be generated based on the image you upload once the memorial is published and an effect is selected.",
+        "EffectNames": {
+          "none": "No Live Portrait",
+          "effectOne": "Effect One",
+          "effectTwo": "Effect Two"
+        }
+      },
+      "Frame": {
+        "stageDescription": "Please select a frame design."
+      },
+      "Tribute": {
+        "stageDescription": "Transform your tribute into a work of art."
+      },
+      "SimmTag": {
+        "stageDescription": "Choose a SimmTag® for visitors to find about <name></name>'s resting place."
+      },
+      "Music": {
+        "stageDescription": "Select background music for your memorial page.",
+        "Tracks": {
+          "none": "No Music",
+          "cello-one": "Cello One",
+          "cello-two": "Cello Two",
+          "piano": "Piano",
+          "ud": "Ud",
+          "violin-one": "Violin One",
+          "violin-two": "Violin Two"
+        }
+      },
+      "Preview": {
+        "stageDescription": "Your page is ready. Please take final review before checkout."
+      },
+      "Checkout": {
+        "choosePlan": "Choose your payment plan.",
+        "donationFootnote": "*10% of all proceeds will be donated to the Turkish Education Foundation.",
+        "keepForever": "Keep Forever",
+        "TableRows": {
+          "expiration": "Expiration",
+          "addImage": "Add Image",
+          "frame": "Frame",
+          "tribute": "Tribute",
+          "simmTag": "Digital SimmTag®",
+          "timeline": "Timeline View",
+          "editableUrl": "Editable URL",
+          "privatePage": "Private Page"
+        }
+      },
+      "Published": {
+        "congratulations": "Congratulations!",
+        "nowLive": "Your memorial is live. A space to honor, remember, and share.",
+        "memoryPublished": "Your memory has been published.",
+        "condolencePublished": "Your condolence has been published.",
+        "donationPublished": "Your donation has been recorded.",
+        "copyLink": "Copy Link",
+        "viewMemorial": "View Memorial"
+      }
+    }
+  },
+  "VisitMemorial": {
+    "BrowseMemorials": {
+      "title": "The Endless Wall of Memories",
+      "description": "Explore our collective universe of memories and find the light that continues to shine."
+    },
+    "FeaturedCarousel": {
+      "title": "Featured Memorials",
+      "description": "Discover featured memorial pages from around the world."
+    },
+    "MemorialCover": {
+      "viewMemorial": "View Memorial"
+    },
+    "MemorialInfo": {
+      "addMemory": "Add Memory",
+      "addCondolence": "Add Condolence",
+      "addWreath": "Order Wreath",
+      "donate": "Donate",
+      "previewInfo": "This is a preview of your memorial page, only you can see it.",
+      "linkCopied": "Link copied",
+      "linkCopiedDetail": "The memorial link has been copied to your clipboard.",
+      "Edit": {
+        "editFrame": "Edit Frame",
+        "editTribute": "Edit Tribute",
+        "editImage": "Edit Image",
+        "editCoverImage": "Edit Cover Image",
+        "editLivePortrait": "Edit Live Portrait",
+        "addSimmTag": "Add SimmTag®",
+        "editSimmTag": "Edit SimmTag®",
+        "editLocation": "Edit Location",
+        "editIdentity": "Edit Identity",
+        "editAbout": "Edit About",
+        "editUrl": "Edit URL",
+        "editVisibility": "Edit Visibility",
+        "editMusic": "Edit Music",
+        "deleteMemorial": "Delete Memorial",
+        "deleteMemorialDescription": "This memorial page will be permanently removed. Want to continue?",
+        "memorialDeletedSuccessfullyTitle": "Memorial Deleted",
+        "memorialDeletedSuccessfullyDescription": "The memorial page has been removed.",
+        "buyPhysicalSimmTag": "Buy Physical SimmTag®",
+        "unlistedInfo": "Only people with the link can access this memorial.",
+        "publicInfo": "This memorial is public."
+      }
+    },
+    "MemorialStats": {
+      "views": "Views",
+      "likes": "Likes",
+      "flowers": "Flowers",
+      "trees": "Trees Planted",
+      "candles": "Candles",
+      "memories": "Memories",
+      "condolences": "Condolences",
+      "donations": "Donations"
+    },
+    "TopContributors": {
+      "flowers": "Flowers Left in Memory",
+      "candles": "Candles Left in Memory",
+      "donations": "Donations Left in Memory",
+      "trees": "Trees Planted in Memory",
+      "noContributors": "No contributors yet."
+    },
+    "Tabs": {
+      "wreaths": "Wreaths",
+      "memories": "Memories",
+      "condolences": "Condolences",
+      "lifeStory": "Life Story",
+      "waitingApprovals": "Pending Approvals",
+      "missingLifeStory": "Life story is not available.",
+      "contributionPreviewInfo": "Memories, Condolences and Timeline displayed here are only examples. They will not appear on the published memorial."
+    }
+  },
+  "PhoneNumberValidation": {
+    "enterPhoneNumberTitle": "Please verify your phone number",
+    "enterPhoneNumberDescription": "We will send you an SMS with a code, please enter your phone number.",
+    "failedToSendCode": "Failed to send code. Please check your phone number and try again.",
+    "phoneNumberIsRequired": "Please enter your phone number.",
+    "enterYourCode": "Enter your code here",
+    "resendCode": "Didn't receive a code? <resend>Send a new code</resend>.",
+    "invalidCode": "That code didn’t work. Please try again.",
+    "verificationDoneTitle": "Phone number confirmed.",
+    "verificationDoneMessage": "You're ready to preserve what matters most."
+  },
+  "CreateMemory": {
+    "title": "Create a Memory",
+    "Stages": {
+      "About": {
+        "invalidDateOfMemory": "Please enter a valid date of memory."
+      },
+      "Tribute": {
+        "stageDescription": "Transform your tribute into a work of art."
+      },
+      "Donate": {
+        "question": "Would you like to donate a tree to the TEMA foundation?"
+      },
+      "Preview": {
+        "previewInfo": "This is a preview of your memory page, only you can see it."
+      }
+    }
+  },
+  "CreateCondolence": {
+    "title": "Share Your Condolence",
+    "Stages": {
+      "About": {
+        "thoughtPrayers": "Leave a message of your thoughts and prayers.",
+        "questionListHint": "Not sure what to say ?",
+        "textInputHint": "Write your condolence here...",
+        "condolenceWithoutWriting": "I just want to leave flowers/candles without writing.",
+        "questionList": {
+          "firstImpression": "What was your first impression of {name}?",
+          "sensReminds": "What song, smell, or food reminds you of {name}?",
+          "passionateAbout": "What was one thing {name} was passionate about?",
+          "wereHere": "What would you say to {name} if he were here now?",
+          "usedToSay": "What is something {name} always used to say?",
+          "believedIn": "What did they believe in or stand for most deeply?",
+          "knownFor": "How did others describe them — kind, joyful, brave, disciplined...?",
+          "strongestSide": "What do you think was their greatest strength?",
+          "mostImportantValue": "What value best defined them — honesty, love, loyalty, fairness...?",
+          "viewOnLife": "How would you describe their overall view on life?",
+          "firstMemory": "What's the first memory that comes to mind when you think of them?",
+          "firstRecall": "Is there a phrase or behavior of theirs that you always remember?",
+          "leftBehind": "What kind of impact or legacy did they leave behind?",
+          "threeWords": "What three words would best describe them?",
+          "strongestFeeling": "What feeling do you think they left in the hearts of others?",
+          "ifHereToday": "If they were with you today, what words or actions would comfort you most?",
+          "whenHurt": "How did they respond when they were hurt or upset?",
+          "buildingTrust": "How did they build trust in their relationships?",
+          "empathy": "How did they respond to someone else's pain or struggles?",
+          "characterLegacy": "What part of their character do you think lives on in others today?"
+        }
+      },
+      "Tribute": {
+        "stageDescription": "Transform your tribute into a work of art."
+      },
+      "Donate": {
+        "question": "Would you like to donate a tree to the TEMA foundation?"
+      },
+      "Preview": {
+        "previewInfo": "This is a preview of your memory page, only you can see it."
+      }
+    }
+  },
+  "Donate": {
+    "tagline": "Donate saplings in memory of {name}.",
+    "infoText": "A certificate will be sent to you from the organization you donated to."
+  },
+  "DeleteContribution": {
+    "title": {
+      "memory": "Delete Memory",
+      "condolence": "Delete Condolence",
+      "donation": "Delete Donation"
+    },
+    "description": {
+      "memory": "Are you sure you want to delete this memory? This action cannot be undone.",
+      "condolence": "Are you sure you want to delete this condolence? This action cannot be undone.",
+      "donation": "Are you sure you want to delete this donation? This action cannot be undone."
+    },
+    "successTitle": {
+      "memory": "Memory Deleted",
+      "condolence": "Condolence Deleted",
+      "donation": "Donation Deleted"
+    },
+    "successDescription": {
+      "memory": "The memory has been deleted successfully.",
+      "condolence": "The condolence has been deleted successfully.",
+      "donation": "The donation has been deleted successfully."
+    }
+  },
+  "Shop": {
+    "comingSoon": "Coming Soon",
+    "addToCart": "Add to Cart",
+    "joinWaitlist": "Join Waitlist",
+    "alreadyInWaitlist": "Already in Waitlist",
+    "Purchase": {
+      "memorialInfo": "Memorial Info",
+      "addressInfo": "Address Info",
+      "finalizeOrder": "Finalize your order",
+      "selectMemorial": "Select a Memorial",
+      "showMemorial": "Show Memorial",
+      "changeMemorial": "Change Memorial",
+      "cancellationTerms": "Return, Cancellation and Withdrawal Procedures",
+      "consent": "I have read and agree to the <terms>Preliminary Information Form</terms> and the <contract>Distance Sales Agreement</contract>.",
+      "missingConsent": "You must agree to the preliminary information form and distance sales agreement.",
+      "gdprSales": "I have read and agree tothe <gdpr>Data Protection Statement for Purchase Activities</gdpr>.",
+      "missingGdpr": "You must agree to the data protection statement for purchase activities."
+    }
+  },
+  "Donation": {
+    "treesToTema": "Donated {count, plural, =0 {no trees} =1 {# tree} other {# trees}} to TEMA Foundation."
+  },
+  "Notification": {
+    "memorial-like": "{name} liked your memorial.",
+    "memory-report": "{name} reported a memory.",
+    "condolence-report": "{name} reported a condolence.",
+    "memory-request": "{name} requested to add a memory.",
+    "condolence-request": "{name} requested to add a condolence.",
+    "memory-approved": "Your memory has been approved.",
+    "condolence-approved": "Your condolence has been approved.",
+    "donation-report": "{name} reported a donation.",
+    "noNotifications": "No notifications.",
+    "noNewMessages": "No new messages."
+  },
+  "About": {
+    "aboutText": "Simmortals is a thoughtful technology platform designed to support you through loss — helping you honour, preserve, and carry forward the memory of those who’ve passed.\n\nBy blending emotional sensitivity with the tools of the digital age, Simmortals opens a new chapter in remembrance. From precise location technology to meaningful acts of social good, it reimagines how individuals, families, and communities navigate grief and memory.\n\nSimmortals is a new ritual of remembrance — where tradition meets innovation, where personal loss finds shared meaning, and where memories are carried gently into the future.\n\n<bold>Because what we remember lives on.</bold>",
+    "purposeTitle": "Our Mission",
+    "purposeText": "To protect memories with care, support emotional journeys through technology, and honour the legacy of every life with dignity.",
+    "promiseTitle": "Our Vision",
+    "promiseText": "To create a timeless digital sanctuary where grief meets grace — and where memories become bridges between hearts, cultures, and generations.",
+    "valuesTitle": "Our Values",
+    "Values": {
+      "connection": {
+        "title": "Connection",
+        "description": "We design technology that brings people, memories, and generations closer. Every connection we build is a thread in the fabric of collective remembrance."
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "We design technology that brings people, memories, and generations closer. Every connection we build is a thread in the fabric of collective remembrance."
+      },
+      "creativity": {
+        "title": "Creativity",
+        "description": "We craft experiences that feel—visually, emotionally, eternally. By blending design with memory, we shape how people connect to the stories that matter most."
+      },
+      "responsibility": {
+        "title": "Responsibility",
+        "description": "We believe legacy is a shared responsibility. By protecting stories and giving back to the world that shapes them, we create space for meaning to grow."
+      },
+      "protection": {
+        "title": "Protection",
+        "description": "We ensure memories remain alive for generations and stay accessible through secure systems."
+      }
+    }
+  },
+  "Contact": {
+    "success": "Your message has been sent successfully.",
+    "gdpr": "I have read and agree to the <gdpr>Contact Form Privacy Notice</gdpr>.",
+    "missingGdpr": "You must agree to the contact form privacy notice."
+  },
+  "Suspended": {
+    "title": "Your Account is Suspended",
+    "description": "Your account has been suspended due to a violation of our terms of service. Please contact our support team for more information.",
+    "contactSupport": "Contact Support"
+  },
+  "Report": {
+    "title": "Report Content",
+    "reasonPrompt": "Why are you reporting this content?",
+    "buttonLabel": "Submit Report",
+    "successTitle": "Report Submitted",
+    "successMessage": "Thank you for your report. Content that violates our guidelines will be reviewed and removed if necessary.",
+    "continueBrowsing": "Continue Browsing",
+    "Options": {
+      "dislike": "I don't like it",
+      "bullying": "Bullying or unwanted contact",
+      "harmful": "Suicide, self-injury or eating disorders",
+      "violence": "Violence, hate or explotation",
+      "promoting": "Selling or promoting restricted items",
+      "explicit": "Nudity or sexual content",
+      "scam": "Scam, fraud or spam",
+      "false-info": "False or misleading information",
+      "copyright": "Copyright or trademark infringement",
+      "illegal": "Unlawful content"
+    }
+  },
+  "AiGreeting": {
+    "VoiceClone": {
+      "title": "Create Voice Clone",
+      "description": "Upload up to 3 audio files to create a voice clone.",
+      "maxFilesReached": "You have reached the maximum number of files.",
+      "pleaseUploadAtLeastOneFile": "Please upload at least one audio file."
+    },
+    "ImageSelection": {
+      "title": "Upload an Image"
+    },
+    "Pending": {
+      "title": "Generating Video"
+    },
+    "Result": {
+      "title": "Memorial Greeting Video"
+    }
+  },
+  "HomePricing": {
+    "title": "Discover plans that will give your memories eternity.",
+    "buttonLabel": "Create a Memorial",
+    "disclaimer": "*10% of proceeds will be donated to the Turkish Education Foundation.",
+    "Features": {
+      "keepForever": "Keep memories forever",
+      "addImages": "Add images",
+      "customFrame": "Add a frame",
+      "customTribute": "Add a tribute",
+      "digitalSimmTag": "Add a SimmTag®",
+      "timelineView": "Timeline view",
+      "editableUrl": "Customizable link",
+      "privatePage": "Private page"
+    }
+  },
+  "HomeVideosSection": {
+    "SimmTagSection": {
+      "description": "Open a window into your loved one’s life story and cherished memories through <simmtag>SimmTag®</simmtag>.",
+      "buttonLabel": "Create a SimmTag®"
+    },
+    "DigitalSimmTagSection": {
+      "description": "Give family and friends a simple and secure way to find the resting place of your loved one—directly from their memory page with <simmtag>SimmTag®</simmtag>.",
+      "buttonLabel": "Create a Memorial Page"
+    },
+    "TimelineSection": {
+      "description": "Discover your loved one’s life story through milestones. Let every memory shine on the timeline.",
+      "buttonLabel": "Create a Memorial Page"
+    },
+    "DonationSection": {
+      "description": "Step into a space where lives are remembered, stories are honoured, and memories continue to connect hearts across time and generations.",
+      "buttonLabel": "Explore Memorial Pages"
+    }
+  },
+  "CookieBanner": {
+    "title": "We use cookies",
+    "description": "We use cookies to improve your experience on our site. By continuing to browse, you agree to our use of cookies.",
+    "cookiePolicy": "Cookie Policy",
+    "allowAll": "Allow All",
+    "essentialOnly": "Essential Only",
+    "cookieSettings": "Cookie Settings",
+    "settingsTitle": "Cookie Settings",
+    "essentialCookies": "Essential Cookies",
+    "essentialCookiesDescription": "Required for the website to function properly.",
+    "marketingCookies": "Marketing Cookies",
+    "marketingCookiesDescription": "Used to deliver personalized advertisements.",
+    "saveSettings": "Save Settings",
+    "cancel": "Cancel"
+  },
+  "FAQ": {
+    "title": "Frequently Asked Questions",
+    "General": {
+      "title": "General",
+      "whatIsSimmortals": {
+        "question": "What is Simmortals?",
+        "answer": "Simmortals is a respectful digital platform designed to help you honor loved ones. It offers a meaningful space to preserve memories, share stories, and create lasting connections that span generations."
+      },
+      "whatIsMemorialPage": {
+        "question": "What is a Memorial Page?",
+        "answer": "A Memorial Page is a dedicated digital space where a loved one's life is remembered through photos, stories, messages, and tributes. It serves as a living memory for friends and family to visit, contribute to, and reflect upon."
+      },
+      "whoCanUse": {
+        "question": "Who can use Simmortals?",
+        "answer": "Anyone who wishes to commemorate a loved one, preserve their legacy, or stay connected to memories can use Simmortals."
+      },
+      "howToCreate": {
+        "question": "How do I create a Memorial Page?",
+        "answer": "After signing up on the platform, simply click \"Create a Memorial\" to begin. You'll be guided through adding photos, videos, stories, and more to build a personalized page."
+      },
+      "isFree": {
+        "question": "Is it free to create a Memorial Page?",
+        "answer": "Yes. Creating a Memorial Page is completely free. We also offer premium plans with additional features and design options."
+      }
+    },
+    "CreatingManaging": {
+      "title": "Creating & Managing Memorial Pages",
+      "whoCanContribute": {
+        "question": "Who can contribute to a Memorial Page?",
+        "answer": "Anyone can share a memory, condolence message, or media. All submissions are subject to the approval of the page administrator."
+      },
+      "howLongActive": {
+        "question": "How long does a Memorial Page stay active?",
+        "answer": "Memorial Pages remain live unless removed by the person who created them. Also, Simmortals reserves the right to remove Memorial pages upon complaint reports."
+      },
+      "arePublic": {
+        "question": "Are Memorial Pages public?",
+        "answer": "By default, Memorial Pages are public and searchable. However, premium users can adjust privacy settings to keep pages private or share only with specific people."
+      }
+    },
+    "PrivacySafety": {
+      "title": "Privacy & Safety",
+      "howToReport": {
+        "question": "How can I report unwanted content?",
+        "answer": "Click \"Report\" to submit a complaint, briefly stating your reason."
+      },
+      "whatHappensReported": {
+        "question": "What happens if inappropriate content or memorial pages are reported?",
+        "answer": "Reports regarding specific content are reviewed by the page administrator, who may remove the content. If the report concerns a memorial page, the Simmortals moderation team will evaluate it. Pages that violate the platform's ethical guidelines or terms of use will be removed."
+      },
+      "howModerated": {
+        "question": "How is content on memorial pages moderated?",
+        "answer": "All contributions are subject to the approval of the page administrator. The administrator has full discretion to accept, reject, or remove any shared content."
+      }
+    },
+    "PaymentsPlans": {
+      "title": "Payments & Plans",
+      "premiumFeatures": {
+        "question": "What features come with Premium Plans?",
+        "answer": "Premium users gain access to advanced tools to enhance and personalize Memorial Pages, including:\n\n• Customized Memorial link\n• Only with the link access option\n• Animated photo enhancements\n• Custom frame design\n• Personalized digital flowers and candles\n• SimmTag® for assigning location\n• SimmTag® products for Tombstone integration\n• Background music options\n• Life story timeline embellished with memories\n• AI-generated voice clone"
+      },
+      "howToPay": {
+        "question": "How can I pay?",
+        "answer": "You can securely complete your purchase using a credit or debit card. Subscriptions are available monthly or annually."
+      },
+      "howToCancel": {
+        "question": "How do I cancel my Premium subscription?",
+        "answer": "Go to your profile and manage subscriptions. You can cancel anytime from there."
+      },
+      "whatHappensCancel": {
+        "question": "What happens if I cancel my subscription?",
+        "answer": "Your Memorial Page will switch to the free version. Premium features will be disabled, but your page will remain live and accessible. You can reactivate your plan at any time."
+      }
+    },
+    "TributesInteractions": {
+      "title": "Tributes & Interactions",
+      "whatAreDigitalTributes": {
+        "question": "What are digital flowers and candles?",
+        "answer": "These are symbolic digital gestures that visitors can leave on a Memorial Page — much like placing flowers or lighting a candle at a physical resting place."
+      },
+      "whoCanLeave": {
+        "question": "Who can leave memories or condolence messages?",
+        "answer": "Any visitor can request to post a tribute or message. All posts can be removed by the page owner discretion."
+      }
+    },
+    "KeyFeatures": {
+      "title": "Key Features",
+      "whatIsSimmTag": {
+        "question": "What is SimmTag® and how does it work?",
+        "answer": "SimmTag® is a elegantly designed physical tag containing a QR code, placed at a loved one's resting place. When scanned, it directs visitors to their Memorial Page."
+      },
+      "howToOrderSimmTag": {
+        "question": "How do I order a SimmTag®?",
+        "answer": "You can order a SimmTag® directly from the Simmortals Shop. Personalize it with a custom message and preview it before purchase."
+      },
+      "whatDoesQRDo": {
+        "question": "What does the QR code on a Memorial Page do?",
+        "answer": "The QR code can be linked to the exact grave location."
+      },
+      "whatIsTimeline": {
+        "question": "What is the Life Story timeline?",
+        "answer": "It's a visual timeline that maps out important life events and memories with photos, notes, and videos — automatically generated for Premium Pages."
+      },
+      "canShare": {
+        "question": "Can I share a Memorial Page on social media?",
+        "answer": "Yes. Each Memorial Page has sharing options and buttons to easily post or send to others."
+      }
+    },
+    "Support": {
+      "title": "Support",
+      "howToGetSupport": {
+        "question": "How can I get technical support?",
+        "answer": "Visit <link>contact</link> page and fill out the support form. We'll get back to you as soon as possible."
+      },
+      "howToDeletePage": {
+        "question": "How do I delete a Memorial Page?",
+        "answer": "Navigate to the page settings and select \"Delete Page\" to remove it permanently."
+      },
+      "howToDeleteAccount": {
+        "question": "How do I delete my account?",
+        "answer": "Go to your profile settings and choose \"Delete My Account.\" This will remove all associated data and pages."
+      }
+    }
+  }
+}

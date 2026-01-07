@@ -1,0 +1,5 @@
+export enum CleanupTaskCode {
+  CLEAN_RESERVED_URLS = 1001,
+  CLEAN_MEMORIES = 1002,
+  CLEAN_CONDOLENCES = 1003,
+}

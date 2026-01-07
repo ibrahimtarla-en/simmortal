@@ -1,0 +1,8 @@
+/** Import Tailwind CSS styles **/
+@import 'tailwindcss';
+
+/** Import sub directories **/
+@import './theme/index.css';
+@import './global/index.css';
+@import './component/index.css';
+@plugin 'tailwind-scrollbar';

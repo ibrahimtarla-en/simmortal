@@ -1,0 +1,104 @@
+{
+  "UserController": {
+    "services": {
+      "UserService": ["UserEntity"],
+      "MemoryService": ["MemoryEntity", "MemoryLikeEntity"],
+      "CondolenceService": ["CondolenceEntity", "CondolenceLikeEntity"],
+      "DonationService": ["DonationEntity", "DonationLikeEntity"]
+    }
+  },
+  "ContactController": {
+    "services": {
+      "ContactService": ["ContactFormEntity"]
+    }
+  },
+  "ShopController": {
+    "services": {
+      "ShopService": [
+        "OrderEntity",
+        "MemorialEntity",
+        "DecorationPriceEntity",
+        "TributePriceEntity",
+        "WreathPriceEntity",
+        "ShopItemEntity",
+        "ShopFeaturedEntity",
+        "ShopWaitlistEntity",
+        "MemorialTransactionEntity"
+      ]
+    }
+  },
+  "MemorialController": {
+    "services": {
+      "MemorialService": [
+        "MemorialEntity",
+        "MemorialViewLogEntity",
+        "MemorialLikeEntity",
+        "FeaturedMemorialEntity",
+        "MemorialTimelineEntity",
+        "MemorialFlagEntity",
+        "MemorialSubscriptionEntity"
+      ],
+      "MemoryService": ["MemoryEntity", "MemoryLikeEntity"],
+      "AIService": ["MemorialEntity", "AiGreetingEntity"]
+    }
+  },
+  "MemoryController": {
+    "services": {
+      "MemoryService": ["MemoryEntity", "MemoryLikeEntity"]
+    }
+  },
+  "SimmTagController": {
+    "services": {
+      "SimmTagService": ["MemorialLocationEntity", "MemorialEntity"]
+    }
+  },
+  "CondolenceController": {
+    "services": {
+      "CondolenceService": ["CondolenceEntity", "CondolenceLikeEntity"]
+    }
+  },
+  "DonationController": {
+    "services": {
+      "DonationService": ["DonationEntity", "DonationLikeEntity"]
+    }
+  },
+  "AdminController": {
+    "services": {
+      "UserService": ["UserEntity"],
+      "MemorialService": [
+        "MemorialEntity",
+        "MemorialViewLogEntity",
+        "MemorialLikeEntity",
+        "FeaturedMemorialEntity",
+        "MemorialTimelineEntity",
+        "MemorialFlagEntity",
+        "MemorialSubscriptionEntity"
+      ],
+      "ContactService": ["ContactFormEntity"],
+      "ShopService": [
+        "OrderEntity",
+        "MemorialEntity",
+        "DecorationPriceEntity",
+        "TributePriceEntity",
+        "WreathPriceEntity",
+        "ShopItemEntity",
+        "ShopFeaturedEntity",
+        "ShopWaitlistEntity",
+        "MemorialTransactionEntity"
+      ],
+      "MemoryService": ["MemoryEntity", "MemoryLikeEntity"],
+      "CondolenceService": ["CondolenceEntity", "CondolenceLikeEntity"],
+      "DonationService": ["DonationEntity", "DonationLikeEntity"]
+    }
+  },
+  "AssetController": {
+    "services": {
+      "StorageService": []
+    }
+  },
+  "NotificationController": {
+    "services": {
+      "NotificationService": ["NotificationEntity", "MemorialEntity", "MemorialFlagEntity"]
+    }
+  }
+}

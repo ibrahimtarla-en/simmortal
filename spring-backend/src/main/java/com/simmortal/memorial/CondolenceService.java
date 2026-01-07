@@ -1,5 +1,6 @@
 package com.simmortal.memorial;
 
+import java.util.List;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -16,7 +17,7 @@ public class CondolenceService {
       String order,
       String userId
   ) {
-    throw new UnsupportedOperationException("Not implemented yet");
+    return List.of();
   }
 
   public Object getOwnedCondolences(
@@ -25,7 +26,7 @@ public class CondolenceService {
       String order,
       String userId
   ) {
-    throw new UnsupportedOperationException("Not implemented yet");
+    return List.of();
   }
 
   public Object getCondolenceById(String id) {

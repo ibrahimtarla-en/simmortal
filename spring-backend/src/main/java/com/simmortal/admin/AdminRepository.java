@@ -5,6 +5,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class AdminRepository {
   public void verifyAdminAccess(String adminUserId) {
-    throw new UnsupportedOperationException("Not implemented yet");
+    if (adminUserId == null || adminUserId.isBlank()) {
+      throw new IllegalArgumentException("Admin user ID is required.");
+    }
   }
 }

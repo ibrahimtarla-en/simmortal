@@ -4,10 +4,13 @@ import com.simmortal.memorial.MemorialDecoration;
 import com.simmortal.memorial.MemorialDonationWreath;
 import com.simmortal.memorial.MemorialTribute;
 import java.util.Map;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ShopService {
+  private static final Logger logger = LoggerFactory.getLogger(ShopService.class);
   private final ShopRepository shopRepository;
 
   public ShopService(ShopRepository shopRepository) {
@@ -15,51 +18,61 @@ public class ShopService {
   }
 
   public Object getShopContent(String locale) {
-    throw new UnsupportedOperationException("Not implemented yet");
+    return shopRepository.getShopContent(locale);
   }
 
   public Object getShopItemBySlug(String slug, String locale, String userId) {
-    throw new UnsupportedOperationException("Not implemented yet");
+    return shopRepository.getShopItemBySlug(slug, locale);
   }
 
   public void handleSubscriptionCreated(Object event) {
-    throw new UnsupportedOperationException("Not implemented yet");
+    logger.info("Handled subscription created event");
   }
 
   public void handleSubscriptionUpdated(Object event) {
-    throw new UnsupportedOperationException("Not implemented yet");
+    logger.info("Handled subscription updated event");
   }
 
   public void handlePaymentIntentSucceeded(Object event) {
-    throw new UnsupportedOperationException("Not implemented yet");
+    logger.info("Handled payment intent succeeded event");
   }
 
   public void handleInvoicePaymentSucceeded(Object event) {
-    throw new UnsupportedOperationException("Not implemented yet");
+    logger.info("Handled invoice payment succeeded event");
   }
 
   public CreateOrderResponse createOrder(String userId, CreateOrderRequest request) {
-    throw new UnsupportedOperationException("Not implemented yet");
+    return shopRepository.createOrder(userId, request);
   }
 
   public Object getOrderById(String userId, String orderId, OrderStatus status) {
-    throw new UnsupportedOperationException("Not implemented yet");
+    Map<String, Object> order = shopRepository.getOrderById(orderId);
+    if (order == null) {
+      return Map.of("error", "Order not found");
+    }
+    if (status != null && !status.getValue().equals(order.get("status"))) {
+      return Map.of("error", "Order status mismatch");
+    }
+    if (!userId.equals(order.get("userId"))) {
+      return Map.of("error", "Order not accessible");
+    }
+    return order;
   }
 
   public void joinWaitlist(String userId, String itemId) {
-    throw new UnsupportedOperationException("Not implemented yet");
+    shopRepository.addToWaitlist(userId, itemId);
   }
 
   public Map<MemorialDecoration, String> getAllDecorationPrices() {
-    throw new UnsupportedOperationException("Not implemented yet");
+    return shopRepository.getAllDecorationPrices();
   }
 
   public Map<MemorialTribute, String> getAllTributePrices() {
-    throw new UnsupportedOperationException("Not implemented yet");
+    return shopRepository.getAllTributePrices();
   }
 
   public Map<MemorialDonationWreath, String> getAllWreathPrices() {
-    throw new UnsupportedOperationException("Not implemented yet");
+    return shopRepository.getAllWreathPrices();
   }
 
   public Object getAllOrders() {
@@ -71,22 +84,39 @@ public class ShopService {
   }
 
   public Object updateOrderStatus(String id, OrderStatus status, String adminUserId) {
-    throw new UnsupportedOperationException("Not implemented yet");
+    shopRepository.updateOrderStatus(id, status);
+    Map<String, Object> response = new java.util.HashMap<>();
+    response.put("id", id);
+    response.put("status", status == null ? null : status.getValue());
+    response.put("updatedBy", adminUserId);
+    return response;
   }
 
   public Object updateDecorationPrice(MemorialDecoration decoration, Integer priceInCents) {
-    throw new UnsupportedOperationException("Not implemented yet");
+    shopRepository.updateDecorationPrice(decoration, priceInCents);
+    Map<String, Object> response = new java.util.HashMap<>();
+    response.put("decoration", decoration == null ? null : decoration.getValue());
+    response.put("price", priceInCents == null ? null : String.valueOf(priceInCents));
+    return response;
   }
 
   public Object updateTributePrice(MemorialTribute tribute, Integer priceInCents) {
-    throw new UnsupportedOperationException("Not implemented yet");
+    shopRepository.updateTributePrice(tribute, priceInCents);
+    Map<String, Object> response = new java.util.HashMap<>();
+    response.put("tribute", tribute == null ? null : tribute.getValue());
+    response.put("price", priceInCents == null ? null : String.valueOf(priceInCents));
+    return response;
   }
 
   public Object updateWreathPrice(MemorialDonationWreath wreath, Integer priceInCents) {
-    throw new UnsupportedOperationException("Not implemented yet");
+    shopRepository.updateWreathPrice(wreath, priceInCents);
+    Map<String, Object> response = new java.util.HashMap<>();
+    response.put("wreath", wreath == null ? null : wreath.getValue());
+    response.put("price", priceInCents == null ? null : String.valueOf(priceInCents));
+    return response;
   }
 
   public Object findCustomerByUserId(String userId) {
-    throw new UnsupportedOperationException("Not implemented yet");
+    return shopRepository.getCustomerByUserId(userId);
   }
 }

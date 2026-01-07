@@ -1,5 +1,4 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { Cron, CronExpression } from '@nestjs/schedule';
 import { InjectDataSource, InjectRepository } from '@nestjs/typeorm';
 import { DataSource, IsNull, LessThan, Not, Repository } from 'typeorm';
 import { CleanupTaskCode } from './cleanup.config';
@@ -42,7 +41,6 @@ export class CleanupService {
     await this.dataSource.query('SELECT pg_advisory_unlock($1)', [lockId]);
   }
 
-  @Cron(CronExpression.EVERY_HOUR)
   async cleanupReservedUrls() {
     const lockAcquired = await this.acquireAdvisoryLock(CleanupTaskCode.CLEAN_RESERVED_URLS);
 
@@ -75,7 +73,6 @@ export class CleanupService {
     }
   }
 
-  @Cron(CronExpression.EVERY_DAY_AT_2AM)
   async cleanupMemories() {
     const lockAcquired = await this.acquireAdvisoryLock(CleanupTaskCode.CLEAN_MEMORIES);
 
@@ -111,7 +108,6 @@ export class CleanupService {
     }
   }
 
-  @Cron(CronExpression.EVERY_DAY_AT_3AM)
   async cleanupCondolences() {
     const lockAcquired = await this.acquireAdvisoryLock(CleanupTaskCode.CLEAN_CONDOLENCES);
     if (!lockAcquired) {

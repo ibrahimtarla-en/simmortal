@@ -1,0 +1,162 @@
+{
+  "UserController": {
+    "basePath": "/user",
+    "endpoints": [
+      {"method": "GET", "path": "/user", "service": "UserService.getUser"},
+      {"method": "POST", "path": "/user/phone-number/send-validation-code", "service": "UserService.sendPhoneNumberVerificationCode"},
+      {"method": "POST", "path": "/user/phone-number/consume-validation-code", "service": "UserService.verifyUserPhoneNumber"},
+      {"method": "GET", "path": "/user/dashboard", "service": "UserService.getDashboardUrl"},
+      {"method": "PATCH", "path": "/user", "service": "UserService.updateUserProfile"},
+      {"method": "GET", "path": "/user/liked-memories", "service": "MemoryService.getLikedMemories"},
+      {"method": "GET", "path": "/user/owned-memories", "service": "MemoryService.getOwnedMemories"},
+      {"method": "GET", "path": "/user/liked-condolences", "service": "CondolenceService.getLikedCondolences"},
+      {"method": "GET", "path": "/user/owned-donations", "service": "DonationService.getOwnedDonations"},
+      {"method": "GET", "path": "/user/liked-donations", "service": "DonationService.getLikedDonations"},
+      {"method": "GET", "path": "/user/owned-condolences", "service": "CondolenceService.getOwnedCondolences"},
+      {"method": "DELETE", "path": "/user", "service": "UserService.deleteUser"}
+    ]
+  },
+  "ContactController": {
+    "basePath": "/contact",
+    "endpoints": [
+      {"method": "POST", "path": "/contact", "service": "ContactService.createContactFormEntry"}
+    ]
+  },
+  "ShopController": {
+    "basePath": "/shop",
+    "endpoints": [
+      {"method": "GET", "path": "/shop", "service": "ShopService.getShopContent"},
+      {"method": "GET", "path": "/shop/:slug", "service": "ShopService.getShopItemBySlug"},
+      {"method": "POST", "path": "/shop/webhook", "service": "ShopService.handleSubscriptionCreated|handleSubscriptionUpdated|handlePaymentIntentSucceeded|handleInvoicePaymentSucceeded"},
+      {"method": "POST", "path": "/shop/order", "service": "ShopService.createOrder"},
+      {"method": "GET", "path": "/shop/order/:orderId", "service": "ShopService.getOrderById"},
+      {"method": "POST", "path": "/shop/waitlist/:itemId", "service": "ShopService.joinWaitlist"},
+      {"method": "GET", "path": "/shop/price/decoration", "service": "ShopService.getAllDecorationPrices"},
+      {"method": "GET", "path": "/shop/price/tribute", "service": "ShopService.getAllTributePrices"},
+      {"method": "GET", "path": "/shop/price/wreath", "service": "ShopService.getAllWreathPrices"}
+    ]
+  },
+  "MemorialController": {
+    "basePath": "/memorial",
+    "endpoints": [
+      {"method": "POST", "path": "/memorial", "service": "MemorialService.createMemorial"},
+      {"method": "GET", "path": "/memorial/search", "service": "MemorialService.searchMemorialByName"},
+      {"method": "GET", "path": "/memorial/featured", "service": "MemorialService.getFeaturedMemorials"},
+      {"method": "POST", "path": "/memorial/preview/:memorialId", "service": "MemorialService.createMemorialPreview"},
+      {"method": "GET", "path": "/memorial/publish-preview/:memorialId", "service": "MemorialService.getPublishMemorialPreview"},
+      {"method": "POST", "path": "/memorial/transcribe", "service": "AIService.transcribeAudio"},
+      {"method": "POST", "path": "/memorial/check-slug", "service": "MemorialService.checkSlugAvailability"},
+      {"method": "GET", "path": "/memorial/premium-prices", "service": "MemorialService.getPremiumSubscriptionPrices"},
+      {"method": "POST", "path": "/memorial/purchase-premium/:memorialId", "service": "MemorialService.createPremiumSubscriptionLink"},
+      {"method": "POST", "path": "/memorial/validate-subscription/:sessionId", "service": "MemorialService.validateSubscriptionResult"},
+      {"method": "POST", "path": "/memorial/publish-free/:memorialId", "service": "MemorialService.publishFreeMemorial"},
+      {"method": "GET", "path": "/memorial/published/:slug", "service": "MemorialService.getPublishedMemorial"},
+      {"method": "GET", "path": "/memorial/published/id/:id", "service": "MemorialService.getPublishedMemorialById"},
+      {"method": "POST", "path": "/memorial/published/:slug/view", "service": "MemorialService.incrementMemorialViewBySlug"},
+      {"method": "POST", "path": "/memorial/published/:slug/like", "service": "MemorialService.likeMemorial"},
+      {"method": "DELETE", "path": "/memorial/published/:slug/like", "service": "MemorialService.unlikeMemorial"},
+      {"method": "GET", "path": "/memorial/owned/:memorialId", "service": "MemorialService.getMemorial"},
+      {"method": "GET", "path": "/memorial/owned-preview", "service": "MemorialService.getOwnedMemorialPreviews"},
+      {"method": "PATCH", "path": "/memorial/owned/:memorialId", "service": "MemorialService.updateMemorial"},
+      {"method": "DELETE", "path": "/memorial/owned/:memorialId", "service": "MemorialService.deleteMemorial"},
+      {"method": "POST", "path": "/memorial/published/flag", "service": "MemorialService.createMemorialFlag"},
+      {"method": "GET", "path": "/memorial/published/:slug/flag", "service": "MemorialService.getMemorialFlags"},
+      {"method": "PATCH", "path": "/memorial/flag/:flagId", "service": "MemorialService.handleMemorialUpdateFlag"},
+      {"method": "GET", "path": "/memorial/ai-greeting/:memorialId", "service": "AIService.getAiGreeting"},
+      {"method": "DELETE", "path": "/memorial/ai-greeting/:memorialId", "service": "AIService.resetAiGreetingCreation"},
+      {"method": "POST", "path": "/memorial/ai-greeting/voice/:memorialId", "service": "AIService.createMemorialVoice|createMemorialGreetingAudio"},
+      {"method": "POST", "path": "/memorial/ai-greeting/image/:memorialId", "service": "AIService.uploadAiGreetingImage"},
+      {"method": "GET", "path": "/memorial/published/:slug/top-contributors/candles", "service": "MemorialService.getTopCandleContributors"},
+      {"method": "GET", "path": "/memorial/published/:slug/top-contributors/donations", "service": "MemorialService.getTopDonors"},
+      {"method": "GET", "path": "/memorial/published/:slug/top-contributors/flowers", "service": "MemorialService.getTopFlowerContributors"},
+      {"method": "GET", "path": "/memorial/published/:slug/top-contributors/trees", "service": "MemorialService.getTopTreePlanters"}
+    ]
+  },
+  "MemoryController": {
+    "basePath": "/memorial/:slug/memory",
+    "endpoints": [
+      {"method": "GET", "path": "/memorial/:slug/memory", "service": "MemoryService.getMemories"},
+      {"method": "POST", "path": "/memorial/:slug/memory", "service": "MemoryService.createMemory"},
+      {"method": "PATCH", "path": "/memorial/:slug/memory/:memoryId", "service": "MemoryService.updateMemory"},
+      {"method": "DELETE", "path": "/memorial/:slug/memory/:memoryId", "service": "MemoryService.deleteMemory"},
+      {"method": "POST", "path": "/memorial/:slug/memory/:memoryId/preview", "service": "MemoryService.getMemoryPreview"},
+      {"method": "POST", "path": "/memorial/:slug/memory/:memoryId/publish", "service": "MemoryService.sendMemoryToReview"},
+      {"method": "POST", "path": "/memorial/:slug/memory/:memoryId/validate-purchase", "service": "MemoryService.validateMemoryContributionPayment"},
+      {"method": "POST", "path": "/memorial/:slug/memory/:memoryId/like", "service": "MemoryService.likeMemory"},
+      {"method": "DELETE", "path": "/memorial/:slug/memory/:memoryId/like", "service": "MemoryService.unlikeMemory"}
+    ]
+  },
+  "SimmTagController": {
+    "basePath": "/memorial/:id/simmtag",
+    "endpoints": [
+      {"method": "POST", "path": "/memorial/:id/simmtag", "service": "SimmTagService.createOrUpdateLocation"}
+    ]
+  },
+  "CondolenceController": {
+    "basePath": "/memorial/:slug/condolence",
+    "endpoints": [
+      {"method": "GET", "path": "/memorial/:slug/condolence", "service": "CondolenceService.getCondolences"},
+      {"method": "POST", "path": "/memorial/:slug/condolence", "service": "CondolenceService.createCondolence"},
+      {"method": "PATCH", "path": "/memorial/:slug/condolence/:condolenceId", "service": "CondolenceService.updateCondolence"},
+      {"method": "DELETE", "path": "/memorial/:slug/condolence/:condolenceId", "service": "CondolenceService.deleteCondolence"},
+      {"method": "POST", "path": "/memorial/:slug/condolence/:condolenceId/preview", "service": "CondolenceService.getCondolencePreview"},
+      {"method": "POST", "path": "/memorial/:slug/condolence/:condolenceId/publish", "service": "CondolenceService.publishCondolence"},
+      {"method": "POST", "path": "/memorial/:slug/condolence/:condolenceId/validate-purchase", "service": "CondolenceService.validateCondolenceContributionPayment"},
+      {"method": "POST", "path": "/memorial/:slug/condolence/:condolenceId/like", "service": "CondolenceService.likeCondolence"},
+      {"method": "DELETE", "path": "/memorial/:slug/condolence/:condolenceId/like", "service": "CondolenceService.unlikeCondolence"}
+    ]
+  },
+  "DonationController": {
+    "basePath": "/memorial/:slug/donation",
+    "endpoints": [
+      {"method": "GET", "path": "/memorial/:slug/donation", "service": "DonationService.getDonations"},
+      {"method": "GET", "path": "/memorial/:slug/donation/:donationId", "service": "DonationService.getSingleDonation"},
+      {"method": "POST", "path": "/memorial/:slug/donation", "service": "DonationService.createDonation"},
+      {"method": "DELETE", "path": "/memorial/:slug/donation/:donationId", "service": "DonationService.deleteDonation"},
+      {"method": "POST", "path": "/memorial/:slug/donation/:donationId/publish", "service": "DonationService.publishDonation"},
+      {"method": "POST", "path": "/memorial/:slug/donation/:donationId/validate-purchase", "service": "DonationService.validateDonationContributionPayment"},
+      {"method": "POST", "path": "/memorial/:slug/donation/:donationId/like", "service": "DonationService.likeDonation"},
+      {"method": "DELETE", "path": "/memorial/:slug/donation/:donationId/like", "service": "DonationService.unlikeDonation"}
+    ]
+  },
+  "AdminController": {
+    "basePath": "/admin",
+    "endpoints": [
+      {"method": "GET", "path": "/admin/users", "service": "UserService.getAllUsers"},
+      {"method": "GET", "path": "/admin/users/:id", "service": "UserService.getAdminUserDetails"},
+      {"method": "GET", "path": "/admin/users/:id/customer", "service": "ShopService.findCustomerByUserId"},
+      {"method": "PATCH", "path": "/admin/users/:id/status", "service": "UserService.updateUserStatus"},
+      {"method": "GET", "path": "/admin/users/memorials/:userId", "service": "MemorialService.getOwnedMemorialPreviews"},
+      {"method": "GET", "path": "/admin/memorials", "service": "MemorialService.getAdminMemorials"},
+      {"method": "GET", "path": "/admin/memorials/:id", "service": "MemorialService.getAdminMemorialById"},
+      {"method": "POST", "path": "/admin/memorials/featured/:id", "service": "MemorialService.addFeaturedMemorial"},
+      {"method": "DELETE", "path": "/admin/memorials/featured/:id", "service": "MemorialService.removeFeaturedMemorial"},
+      {"method": "GET", "path": "/admin/contact-forms", "service": "ContactService.getOpenContactForms"},
+      {"method": "GET", "path": "/admin/contact-forms/:id", "service": "ContactService.getContactFormById"},
+      {"method": "PATCH", "path": "/admin/contact-forms/close/:id", "service": "ContactService.closeContactForm"},
+      {"method": "GET", "path": "/admin/shop/orders", "service": "ShopService.getAllOrders"},
+      {"method": "GET", "path": "/admin/shop/orders/:id", "service": "ShopService.getOrderByIdAdmin"},
+      {"method": "PATCH", "path": "/admin/shop/orders/:id/status", "service": "ShopService.updateOrderStatus"},
+      {"method": "GET", "path": "/admin/memorial-flags", "service": "MemorialService.getOpenAdminFlags"},
+      {"method": "GET", "path": "/admin/memory/:id", "service": "MemoryService.getMemoryById"},
+      {"method": "GET", "path": "/admin/condolence/:id", "service": "CondolenceService.getCondolenceById"},
+      {"method": "GET", "path": "/admin/donation/:id", "service": "DonationService.getDonationById"},
+      {"method": "PATCH", "path": "/admin/price/decoration/:decoration", "service": "ShopService.updateDecorationPrice"},
+      {"method": "PATCH", "path": "/admin/price/tribute/:tribute", "service": "ShopService.updateTributePrice"},
+      {"method": "PATCH", "path": "/admin/price/wreath/:wreath", "service": "ShopService.updateWreathPrice"}
+    ]
+  },
+  "AssetController": {
+    "basePath": "/asset",
+    "endpoints": [
+      {"method": "GET", "path": "/asset/*path", "service": "StorageService.getFileStream"}
+    ]
+  },
+  "NotificationController": {
+    "basePath": "/notification",
+    "endpoints": [
+      {"method": "GET", "path": "/notification", "service": "NotificationService.getPaginatedNotifications"},
+      {"method": "PATCH", "path": "/notification/:notificationId/read", "service": "NotificationService.markNotificationRead"}
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/postgres}
+    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+    password: ${SPRING_DATASOURCE_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
+
+cleanup:
+  scheduler:
+    timezone: ${CLEANUP_TIMEZONE:UTC}
+    cron:
+      reserved-urls: ${CLEANUP_CRON_RESERVED_URLS:0 0 * * * *}
+      memories: ${CLEANUP_CRON_MEMORIES:0 0 2 * * *}
+      condolences: ${CLEANUP_CRON_CONDOLENCES:0 0 3 * * *}

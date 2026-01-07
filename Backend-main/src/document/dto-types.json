@@ -1,0 +1,151 @@
+{
+  "user": {
+    "interface": [
+      "UserMetadataRecord",
+      "SupportedLoginMethod",
+      "SimmortalsUser",
+      "SendPhoneNumberValidationCodeRequest",
+      "ConsumePhoneNumberValidationCodeRequest",
+      "UserAccountStatus",
+      "UserEntityWithCounts",
+      "AdminUserDetails"
+    ],
+    "dto": [
+      "UserDashboardUrlResponse",
+      "UpdateUserProfileRequest"
+    ]
+  },
+  "notification": {
+    "interface": [
+      "NotificationType",
+      "BaseNotification",
+      "UserNotification"
+    ],
+    "dto": [
+      "PaginatedNotificationResponse"
+    ]
+  },
+  "memorial": {
+    "dto": [
+      "CreateMemorialRequest",
+      "CreateMemorialResponse",
+      "CheckSlugAvailabilityRequest",
+      "CheckSlugAvailabilityResponse",
+      "ValidatePurchaseResultResponse",
+      "PublishFreeMemorialResponse",
+      "PurchasePremiumMemorialRequest",
+      "PremiumPricesResponse",
+      "PublishMemorialContributionStatus",
+      "PublishPaidMemorialContributionResponse",
+      "PublishMemorialContributionResponse",
+      "GetMemorialMemoriesRequest",
+      "CreateMemorialFlagRequest"
+    ],
+    "interface": [
+      "RelationToDeceased",
+      "MemorialFrame",
+      "MemorialMusic",
+      "MemorialTribute",
+      "MemorialLivePortraitEffect",
+      "MemorialDecoration",
+      "MemorialDonationWreath",
+      "MemorialStatus",
+      "MemorialContributionStatus",
+      "Memorial",
+      "TimelineMemory",
+      "PublishedMemorial",
+      "AdminMemorial",
+      "AdminMemorialDetails",
+      "OwnedMemorialPreview",
+      "PublishMemorialPreview",
+      "MemorialContributionSortField",
+      "MemorialContributionSortMap",
+      "MemorialFlagType",
+      "MemorialReportFlag",
+      "MemorialFlagStatus",
+      "MemorialFlag",
+      "AdminMemorialFlag",
+      "MemorialFlagReason",
+      "TopContributor"
+    ]
+  },
+  "memory": {
+    "dto": [
+      "UpdateMemoryPayload",
+      "CreateMemoryRequest"
+    ],
+    "interface": [
+      "NewMemory",
+      "BaseMemory",
+      "Memory",
+      "MemoryWithMemorialInfo"
+    ]
+  },
+  "condolence": {
+    "dto": [
+      "CreateCondolenceRequest",
+      "UpdateCondolencePayload"
+    ],
+    "interface": [
+      "NewCondolence",
+      "Condolence",
+      "CondolenceWithMemorialInfo"
+    ]
+  },
+  "donation": {
+    "dto": [
+      "CreateDonationRequest"
+    ],
+    "interface": [
+      "NewDonation",
+      "Donation",
+      "DonationWithMemorialInfo"
+    ]
+  },
+  "simmtag": {
+    "interface": [
+      "SimmTagLocation"
+    ]
+  },
+  "shop": {
+    "dto": [
+      "CreateOrderRequest",
+      "CreateOrderResponse"
+    ],
+    "interface": [
+      "ShopItemStatus",
+      "ShopListingsResponse",
+      "ShopItem",
+      "FeaturedShopItem",
+      "MemorialContributionMetadata",
+      "Order",
+      "DetailedOrder",
+      "OrderStatus"
+    ]
+  },
+  "ai": {
+    "interface": [
+      "GoEnchanceAICreateResponse",
+      "GoEnchanceAIStatusResponse",
+      "HeygenImageUploadResponse",
+      "HeygenAudioUploadResponse",
+      "HeygenAsset",
+      "HeygenVideoGenerateResponse",
+      "HeygenVideoStatusResponse",
+      "GenerateHeygenVideoConfig",
+      "AiGreetingState",
+      "AiGreeting"
+    ]
+  },
+  "contact": {
+    "interface": [
+      "ContactFormStatus",
+      "ContactFormRequest"
+    ]
+  },
+  "verification": {
+    "interface": [
+      "SmsOtpResult"
+    ]
+  }
+}

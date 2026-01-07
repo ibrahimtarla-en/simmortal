@@ -1,10 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ValidationPipe, VersioningType } from '@nestjs/common';
-import { env } from './config/env';
-import supertokens from 'supertokens-node';
-import { SuperTokensExceptionFilter } from 'supertokens-nestjs';
-import { getWebsiteDomain } from './config/supertokens.config';
+import { env, getDomain } from './config/env';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -23,12 +20,11 @@ async function bootstrap() {
     }),
   );
   app.enableCors({
-    origin: [getWebsiteDomain()],
+    origin: [getDomain()],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
-    allowedHeaders: ['content-type', 'authorization', ...supertokens.getAllCORSHeaders()],
+    allowedHeaders: ['content-type', 'authorization'],
     credentials: true,
   });
-  app.useGlobalFilters(new SuperTokensExceptionFilter());
   await app.listen(env.general.port);
 }
 

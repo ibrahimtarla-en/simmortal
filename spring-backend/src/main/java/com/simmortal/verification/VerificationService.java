@@ -31,7 +31,11 @@ public class VerificationService {
 
   public boolean validateSmsVerificationOtp(String phoneNumber, String code) {
     ensureConfigured();
-    VerificationCheck check = VerificationCheck.creator(serviceSid, code).setTo(phoneNumber).create();
+    VerificationCheck check =
+        VerificationCheck.creator(serviceSid)
+            .setTo(phoneNumber)
+            .setCode(code)
+            .create();
     return "approved".equalsIgnoreCase(check.getStatus());
   }
 

@@ -62,7 +62,7 @@ public class StorageService {
   public String generateSignedUrl(String path) {
     ensureConfigured();
     BlobInfo info = BlobInfo.newBuilder(BlobId.of(bucketName, path)).build();
-    return storage.signUrl(info, Duration.ofMinutes(10)).toString();
+    return storage.signUrl(info, 10, java.util.concurrent.TimeUnit.MINUTES).toString();
   }
 
   private Storage initializeStorage() {

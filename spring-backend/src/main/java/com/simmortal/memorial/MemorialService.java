@@ -1,32 +1,68 @@
 package com.simmortal.memorial;
 
+import com.simmortal.storage.StorageService;
+import com.simmortal.util.AssetService;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
+import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.server.ResponseStatusException;
 
 @Service
 public class MemorialService {
   private final MemorialRepository memorialRepository;
-  private final Map<String, Map<String, Object>> memorials = new ConcurrentHashMap<>();
+  private final StorageService storageService;
+  private final AssetService assetService;
   private final Map<String, Map<String, Object>> flags = new ConcurrentHashMap<>();
   private final Map<String, String> slugToId = new ConcurrentHashMap<>();
+  private final Map<String, Set<String>> likes = new ConcurrentHashMap<>();
+  private final Set<String> bannedSlugs = Set.of("admin", "login", "asset", "api", "memorial");
 
-  public MemorialService(MemorialRepository memorialRepository) {
+  public MemorialService(
+      MemorialRepository memorialRepository,
+      StorageService storageService,
+      AssetService assetService
+  ) {
     this.memorialRepository = memorialRepository;
+    this.storageService = storageService;
+    this.assetService = assetService;
   }
 
   public Object createMemorial(String userId, Map<String, Object> request, MultipartFile image) {
-    @SuppressWarnings("unchecked")
-    Map<String, Object> memorial = (Map<String, Object>) memorialRepository.createMemorial(userId, request, image);
-    memorials.put(memorial.get("id").toString(), memorial);
-    slugToId.put(memorial.get("slug").toString(), memorial.get("id").toString());
-    return memorial;
+    String id = UUID.randomUUID().toString();
+    String name = request.getOrDefault("name", "Unnamed Memorial").toString();
+    String requestedSlug = request.getOrDefault("slug", "").toString();
+    String defaultSlug = requestedSlug.isBlank() ? buildSlug(name, id) : sanitizeSlug(requestedSlug);
+    if (!checkSlugAvailability(defaultSlug, id)) {
+      defaultSlug = buildSlug(name, id);
+    }
+    String imagePath = saveMemorialImage(id, image, "cover");
+    Map<String, Object> memorial = new ConcurrentHashMap<>();
+    memorial.put("id", id);
+    memorial.put("userId", userId);
+    memorial.put("name", name);
+    memorial.put("defaultSlug", defaultSlug);
+    memorial.put("premiumSlug", null);
+    memorial.put("status", "draft");
+    memorial.put("createdAt", Instant.now().toString());
+    memorial.put("updatedAt", Instant.now().toString());
+    memorial.put("imagePath", imagePath);
+    memorial.put("coverImagePath", imagePath);
+    memorial.put("featured", false);
+    memorial.put("views", 0);
+    memorial.put("likes", 0);
+    memorialRepository.save(memorial);
+    slugToId.put(defaultSlug, id);
+    return enrichMemorial(memorial);
   }
 
   public Object searchMemorialByName(String query, Integer limit) {
@@ -34,10 +70,11 @@ public class MemorialService {
       return List.of();
     }
     List<Map<String, Object>> results = new ArrayList<>();
-    for (Map<String, Object> memorial : memorials.values()) {
+    String normalized = query.toLowerCase(Locale.ROOT);
+    for (Map<String, Object> memorial : memorialRepository.getAllMemorials()) {
       Object name = memorial.get("name");
-      if (name != null && name.toString().toLowerCase().contains(query.toLowerCase())) {
-        results.add(memorial);
+      if (name != null && name.toString().toLowerCase(Locale.ROOT).contains(normalized)) {
+        results.add(enrichMemorial(memorial));
       }
       if (limit != null && results.size() >= limit) {
         break;
@@ -48,9 +85,9 @@ public class MemorialService {
 
   public Object getFeaturedMemorials(Integer limit) {
     List<Map<String, Object>> featured = new ArrayList<>();
-    for (Map<String, Object> memorial : memorials.values()) {
+    for (Map<String, Object> memorial : memorialRepository.getAllMemorials()) {
       if (Boolean.TRUE.equals(memorial.get("featured"))) {
-        featured.add(memorial);
+        featured.add(enrichMemorial(memorial));
       }
       if (limit != null && featured.size() >= limit) {
         break;
@@ -60,12 +97,17 @@ public class MemorialService {
   }
 
   public Object createMemorialPreview(String memorialId, Map<String, Object> overrides) {
-    Map<String, Object> memorial = new HashMap<>(memorials.getOrDefault(memorialId, Map.of()));
-    if (overrides != null) {
-      memorial.putAll(overrides);
+    Map<String, Object> memorial = memorialRepository.getMemorialById(memorialId);
+    if (memorial == null) {
+      throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Memorial not found");
     }
-    memorial.put("preview", true);
-    return memorial;
+    Map<String, Object> preview = new HashMap<>(memorial);
+    if (overrides != null) {
+      preview.putAll(overrides);
+    }
+    preview.put("preview", true);
+    preview.put("status", "preview");
+    return enrichMemorial(preview);
   }
 
   public Object getPublishMemorialPreview(String memorialId) {
@@ -73,8 +115,15 @@ public class MemorialService {
   }
 
   public boolean checkSlugAvailability(String slug, String memorialId) {
-    String existing = slugToId.get(slug);
-    return existing == null || existing.equals(memorialId);
+    String normalized = sanitizeSlug(slug);
+    if (normalized.isBlank() || bannedSlugs.contains(normalized)) {
+      return false;
+    }
+    String existing = slugToId.get(normalized);
+    if (existing != null && !existing.equals(memorialId)) {
+      return false;
+    }
+    return memorialRepository.findBySlug(normalized).map(found -> found.get("id").toString().equals(memorialId)).orElse(true);
   }
 
   public Object getPremiumSubscriptionPrices() {
@@ -100,73 +149,105 @@ public class MemorialService {
   }
 
   public Object publishFreeMemorial(String userId, String memorialId) {
-    Map<String, Object> memorial = memorials.get(memorialId);
+    Map<String, Object> memorial = memorialRepository.getMemorialById(memorialId);
     if (memorial == null) {
-      return null;
+      throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Memorial not found");
     }
+    ensureOwner(memorial, userId);
     memorial.put("status", "published");
     memorial.put("publishedAt", Instant.now().toString());
-    return memorial;
+    memorial.put("updatedAt", Instant.now().toString());
+    memorialRepository.save(memorial);
+    return enrichMemorial(memorial);
   }
 
   public Object getPublishedMemorial(String slug, String userId) {
-    String memorialId = slugToId.get(slug);
-    return memorialId == null ? null : memorials.get(memorialId);
+    String memorialId = getMemorialIdBySlug(slug);
+    Map<String, Object> memorial = memorialId == null ? null : memorialRepository.getMemorialById(memorialId);
+    if (memorial == null || !"published".equals(memorial.get("status"))) {
+      throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Memorial not found");
+    }
+    Map<String, Object> response = enrichMemorial(memorial);
+    if (userId != null) {
+      response.put("likedByUser", likes.getOrDefault(memorialId, Set.of()).contains(userId));
+    }
+    return response;
   }
 
   public Object getPublishedMemorialById(String id) {
-    return memorials.get(id);
+    Map<String, Object> memorial = memorialRepository.getMemorialById(id);
+    if (memorial == null) {
+      throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Memorial not found");
+    }
+    return enrichMemorial(memorial);
   }
 
   public void incrementMemorialViewBySlug(String slug, Object request) {
-    String memorialId = slugToId.get(slug);
+    String memorialId = getMemorialIdBySlug(slug);
     if (memorialId == null) {
       return;
     }
-    Map<String, Object> memorial = memorials.get(memorialId);
+    Map<String, Object> memorial = memorialRepository.getMemorialById(memorialId);
+    if (memorial == null) {
+      return;
+    }
     int views = ((Number) memorial.getOrDefault("views", 0)).intValue();
     memorial.put("views", views + 1);
+    memorial.put("updatedAt", Instant.now().toString());
+    memorialRepository.save(memorial);
   }
 
   public String getMemorialIdBySlug(String slug) {
-    return slugToId.get(slug);
+    String id = slugToId.get(slug);
+    if (id != null) {
+      return id;
+    }
+    return memorialRepository.findBySlug(slug).map(memorial -> memorial.get("id").toString()).orElse(null);
   }
 
   public void likeMemorial(String memorialId, String userId) {
-    Map<String, Object> memorial = memorials.get(memorialId);
+    Map<String, Object> memorial = memorialRepository.getMemorialById(memorialId);
     if (memorial == null) {
-      return;
+      throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Memorial not found");
     }
-    int likes = ((Number) memorial.getOrDefault("likes", 0)).intValue();
-    memorial.put("likes", likes + 1);
+    Set<String> likedUsers = likes.computeIfAbsent(memorialId, id -> new HashSet<>());
+    if (likedUsers.add(userId)) {
+      int totalLikes = ((Number) memorial.getOrDefault("likes", 0)).intValue() + 1;
+      memorial.put("likes", totalLikes);
+      memorialRepository.save(memorial);
+    }
   }
 
   public void unlikeMemorial(String memorialId, String userId) {
-    Map<String, Object> memorial = memorials.get(memorialId);
+    Map<String, Object> memorial = memorialRepository.getMemorialById(memorialId);
     if (memorial == null) {
-      return;
+      throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Memorial not found");
     }
-    int likes = ((Number) memorial.getOrDefault("likes", 0)).intValue();
-    memorial.put("likes", Math.max(0, likes - 1));
+    Set<String> likedUsers = likes.getOrDefault(memorialId, new HashSet<>());
+    if (likedUsers.remove(userId)) {
+      int totalLikes = ((Number) memorial.getOrDefault("likes", 0)).intValue();
+      memorial.put("likes", Math.max(0, totalLikes - 1));
+      memorialRepository.save(memorial);
+    }
   }
 
   public Object getMemorial(String userId, String memorialId, Boolean recommendSlug) {
-    Map<String, Object> memorial = memorials.get(memorialId);
+    Map<String, Object> memorial = memorialRepository.getMemorialById(memorialId);
     if (memorial == null) {
-      return null;
+      throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Memorial not found");
     }
-    if (recommendSlug != null) {
-      memorial.put("recommendSlug", recommendSlug);
+    ensureOwner(memorial, userId);
+    Map<String, Object> response = enrichMemorial(memorial);
+    if (Boolean.TRUE.equals(recommendSlug)) {
+      response.put("recommendedSlug", buildSlug(memorial.get("name").toString(), memorialId));
     }
-    return memorial;
+    return response;
   }
 
   public Object getOwnedMemorialPreviews(String userId) {
     List<Map<String, Object>> results = new ArrayList<>();
-    for (Map<String, Object> memorial : memorials.values()) {
-      if (userId.equals(memorial.get("userId"))) {
-        results.add(memorial);
-      }
+    for (Map<String, Object> memorial : memorialRepository.getMemorialsByOwner(userId)) {
+      results.add(enrichMemorial(memorial));
     }
     return results;
   }
@@ -178,17 +259,56 @@ public class MemorialService {
       MultipartFile image,
       MultipartFile coverImage
   ) {
-    Map<String, Object> memorial = memorials.get(memorialId);
+    Map<String, Object> memorial = memorialRepository.getMemorialById(memorialId);
     if (memorial == null) {
-      return null;
+      throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Memorial not found");
     }
-    memorial.putAll(request);
+    ensureOwner(memorial, userId);
+    if (request != null) {
+      memorial.putAll(request);
+    }
+    if (request != null && request.get("defaultSlug") != null) {
+      String nextSlug = sanitizeSlug(request.get("defaultSlug").toString());
+      if (!checkSlugAvailability(nextSlug, memorialId)) {
+        throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Slug already in use");
+      }
+      String previousSlug = memorial.getOrDefault("defaultSlug", "").toString();
+      memorial.put("defaultSlug", nextSlug);
+      slugToId.remove(previousSlug);
+      slugToId.put(nextSlug, memorialId);
+    }
+    if (request != null && request.get("premiumSlug") != null) {
+      String nextSlug = sanitizeSlug(request.get("premiumSlug").toString());
+      if (!checkSlugAvailability(nextSlug, memorialId)) {
+        throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Slug already in use");
+      }
+      memorial.put("premiumSlug", nextSlug);
+      slugToId.put(nextSlug, memorialId);
+    }
+    if (image != null) {
+      String imagePath = saveMemorialImage(memorialId, image, "portrait");
+      memorial.put("imagePath", imagePath);
+    }
+    if (coverImage != null) {
+      String coverImagePath = saveMemorialImage(memorialId, coverImage, "cover");
+      memorial.put("coverImagePath", coverImagePath);
+    }
     memorial.put("updatedAt", Instant.now().toString());
-    return memorial;
+    memorialRepository.save(memorial);
+    return enrichMemorial(memorial);
   }
 
   public Object deleteMemorial(String userId, String memorialId) {
-    return memorialRepository.deleteMemorial(memorialId, userId);
+    Map<String, Object> memorial = memorialRepository.getMemorialById(memorialId);
+    if (memorial == null) {
+      throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Memorial not found");
+    }
+    ensureOwner(memorial, userId);
+    memorial.put("status", "removed");
+    memorial.put("deletedBy", userId);
+    memorial.put("deletedAt", Instant.now().toString());
+    memorialRepository.save(memorial);
+    return memorial;
   }
 
   public void createMemorialFlag(
@@ -206,11 +326,21 @@ public class MemorialService {
     flag.put("reason", reason);
     flag.put("status", MemorialFlagStatus.OPEN.getValue());
     flag.put("createdAt", Instant.now().toString());
+    if (type == MemorialFlagType.MEMORIAL_REPORT) {
+      flag.put("memorialId", referenceId);
+    }
     flags.put(id, flag);
   }
 
   public Object getMemorialFlags(String userId, String slug) {
-    return new ArrayList<>(flags.values());
+    String memorialId = getMemorialIdBySlug(slug);
+    List<Map<String, Object>> results = new ArrayList<>();
+    for (Map<String, Object> flag : flags.values()) {
+      if (memorialId != null && memorialId.equals(flag.get("memorialId"))) {
+        results.add(flag);
+      }
+    }
+    return results;
   }
 
   public void handleMemorialUpdateFlag(String userId, String flagId, MemorialFlagStatus status) {
@@ -222,10 +352,11 @@ public class MemorialService {
   }
 
   public void verifyMemorialOwnership(String userId, String memorialId) {
-    Map<String, Object> memorial = memorials.get(memorialId);
-    if (memorial == null || !userId.equals(memorial.get("userId"))) {
-      throw new IllegalStateException("Memorial not owned by user.");
+    Map<String, Object> memorial = memorialRepository.getMemorialById(memorialId);
+    if (memorial == null) {
+      throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Memorial not found");
     }
+    ensureOwner(memorial, userId);
   }
 
   public Object getTopCandleContributors(String slug) {
@@ -245,31 +376,41 @@ public class MemorialService {
   }
 
   public Object getAdminMemorials() {
-    return new ArrayList<>(memorials.values());
+    List<Map<String, Object>> results = new ArrayList<>();
+    for (Map<String, Object> memorial : memorialRepository.getAllMemorials()) {
+      results.add(enrichMemorial(memorial));
+    }
+    return results;
   }
 
   public Object getAdminMemorialById(String id) {
-    return memorials.get(id);
+    Map<String, Object> memorial = memorialRepository.getMemorialById(id);
+    if (memorial == null) {
+      throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Memorial not found");
+    }
+    return enrichMemorial(memorial);
   }
 
   public Object addFeaturedMemorial(String adminUserId, String id) {
-    Map<String, Object> memorial = memorials.get(id);
+    Map<String, Object> memorial = memorialRepository.getMemorialById(id);
     if (memorial == null) {
-      return null;
+      throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Memorial not found");
     }
     memorial.put("featured", true);
     memorial.put("featuredAt", Instant.now().toString());
-    return memorial;
+    memorialRepository.save(memorial);
+    return enrichMemorial(memorial);
   }
 
   public Object removeFeaturedMemorial(String adminUserId, String id) {
-    Map<String, Object> memorial = memorials.get(id);
+    Map<String, Object> memorial = memorialRepository.getMemorialById(id);
     if (memorial == null) {
-      return null;
+      throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Memorial not found");
     }
     memorial.put("featured", false);
     memorial.put("featuredAt", null);
-    return memorial;
+    memorialRepository.save(memorial);
+    return enrichMemorial(memorial);
   }
 
   public Object getOpenAdminFlags() {
@@ -280,5 +421,58 @@ public class MemorialService {
       }
     }
     return openFlags;
+  }
+
+  private String buildSlug(String name, String memorialId) {
+    String base = sanitizeSlug(name);
+    if (base.isBlank()) {
+      base = "memorial";
+    }
+    String slug = base;
+    if (!checkSlugAvailability(slug, memorialId)) {
+      slug = base + "-" + memorialId.substring(0, 6);
+    }
+    return slug;
+  }
+
+  private String sanitizeSlug(String value) {
+    String sanitized = value == null ? "" : value.trim().toLowerCase(Locale.ROOT);
+    sanitized = sanitized.replaceAll("[^a-z0-9\\s-]", "");
+    sanitized = sanitized.replaceAll("\\s+", "-");
+    sanitized = sanitized.replaceAll("-{2,}", "-");
+    return sanitized;
+  }
+
+  private String saveMemorialImage(String memorialId, MultipartFile image, String type) {
+    String extension = "png";
+    if (image != null && image.getContentType() != null && image.getContentType().contains("/")) {
+      extension = image.getContentType().split("/")[1];
+    }
+    String path = String.format("memorial/%s/%s-%d.%s", memorialId, type, System.currentTimeMillis(), extension);
+    try {
+      storageService.save(path, image.getBytes(), image.getContentType());
+    } catch (Exception ex) {
+      throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Failed to save memorial image");
+    }
+    return path;
+  }
+
+  private void ensureOwner(Map<String, Object> memorial, String userId) {
+    if (!userId.equals(memorial.get("userId"))) {
+      throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Unauthorized");
+    }
+  }
+
+  private Map<String, Object> enrichMemorial(Map<String, Object> memorial) {
+    Map<String, Object> enriched = new HashMap<>(memorial);
+    Object imagePath = memorial.get("imagePath");
+    Object coverImagePath = memorial.get("coverImagePath");
+    if (imagePath != null) {
+      enriched.put("imagePath", assetService.generateAssetUrl(imagePath.toString()));
+    }
+    if (coverImagePath != null) {
+      enriched.put("coverImagePath", assetService.generateAssetUrl(coverImagePath.toString()));
+    }
+    return enriched;
   }
 }

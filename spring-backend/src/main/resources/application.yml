@@ -18,3 +18,13 @@ spring:
           auth: true
           starttls:
             enable: true
+
+app:
+  jwt:
+    secret: change-me-please-change-me-please
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger

@@ -137,6 +137,13 @@ public class AdminController {
     return adminService.getOpenMemorialFlags(adminUserId);
   }
 
+  @GetMapping("dashboard/summary")
+  public AdminDashboardSummary getDashboardSummary(
+      @RequestHeader("X-User-Id") String adminUserId
+  ) {
+    return adminService.getDashboardSummary(adminUserId);
+  }
+
   @GetMapping("memory/{id}")
   public Object getMemoryById(
       @RequestHeader("X-User-Id") String adminUserId,

@@ -19,9 +19,17 @@ spring:
           starttls:
             enable: true
 
+server:
+  servlet:
+    context-path: /api/v1
+
 app:
   jwt:
     secret: change-me-please-change-me-please
+  supertokens:
+    connection-uri: http://localhost:3567
+    api-key: ""
+    anti-csrf: true
 
 springdoc:
   api-docs:

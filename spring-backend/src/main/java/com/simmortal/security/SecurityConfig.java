@@ -11,9 +11,14 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 public class SecurityConfig {
   private final JwtAuthenticationFilter jwtAuthenticationFilter;
+  private final SupertokensAuthenticationFilter supertokensAuthenticationFilter;
 
-  public SecurityConfig(JwtAuthenticationFilter jwtAuthenticationFilter) {
+  public SecurityConfig(
+      JwtAuthenticationFilter jwtAuthenticationFilter,
+      SupertokensAuthenticationFilter supertokensAuthenticationFilter
+  ) {
     this.jwtAuthenticationFilter = jwtAuthenticationFilter;
+    this.supertokensAuthenticationFilter = supertokensAuthenticationFilter;
   }
 
   @Bean
@@ -21,9 +26,11 @@ public class SecurityConfig {
     http
         .csrf(csrf -> csrf.disable())
         .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-        .authorizeHttpRequests(auth -> auth.requestMatchers("/asset/**").permitAll()
+        .authorizeHttpRequests(auth -> auth.requestMatchers("/asset/**", "/auth/**", "/api-docs/**", "/swagger/**")
+            .permitAll()
             .anyRequest().authenticated())
         .httpBasic(Customizer.withDefaults())
+        .addFilterBefore(supertokensAuthenticationFilter, JwtAuthenticationFilter.class)
         .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
     return http.build();
   }

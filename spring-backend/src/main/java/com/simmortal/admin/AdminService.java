@@ -125,6 +125,16 @@ public class AdminService {
     return memorialService.getOpenAdminFlags();
   }
 
+  public AdminDashboardSummary getDashboardSummary(String adminUserId) {
+    adminRepository.verifyAdminAccess(adminUserId);
+    int users = countItems(userService.getAllUsers());
+    int memorials = countItems(memorialService.getAdminMemorials());
+    int contactForms = countItems(contactService.getOpenContactForms());
+    int orders = countItems(shopService.getAllOrders());
+    int reports = countItems(memorialService.getOpenAdminFlags());
+    return new AdminDashboardSummary(users, memorials, contactForms, orders, reports);
+  }
+
   public Object getMemoryById(String adminUserId, String id) {
     adminRepository.verifyAdminAccess(adminUserId);
     return memoryService.getMemoryById(id);
@@ -153,5 +163,18 @@ public class AdminService {
   public Object updateWreathPrice(String adminUserId, MemorialDonationWreath wreath, Integer priceInCents) {
     adminRepository.verifyAdminAccess(adminUserId);
     return shopService.updateWreathPrice(wreath, priceInCents);
+  }
+
+  private int countItems(Object response) {
+    if (response == null) {
+      return 0;
+    }
+    if (response instanceof java.util.Collection<?> collection) {
+      return collection.size();
+    }
+    if (response instanceof java.util.Map<?, ?> map) {
+      return map.size();
+    }
+    return 1;
   }
 }

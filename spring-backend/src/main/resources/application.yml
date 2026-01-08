@@ -18,3 +18,7 @@ spring:
           auth: true
           starttls:
             enable: true
+
+app:
+  jwt:
+    secret: change-me-please-change-me-please

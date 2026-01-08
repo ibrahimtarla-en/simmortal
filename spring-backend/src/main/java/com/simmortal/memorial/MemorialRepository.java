@@ -1,40 +1,46 @@
 package com.simmortal.memorial;
 
-import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
-import java.util.UUID;
+import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.multipart.MultipartFile;
 
 @Repository
 public class MemorialRepository {
   private final Map<String, Map<String, Object>> memorials = new ConcurrentHashMap<>();
 
-  public Object createMemorial(String userId, Map<String, Object> request, MultipartFile image) {
-    String id = UUID.randomUUID().toString();
-    Map<String, Object> memorial = new ConcurrentHashMap<>();
-    memorial.put("id", id);
-    memorial.put("userId", userId);
-    memorial.put("name", request.getOrDefault("name", "Unnamed Memorial"));
-    memorial.put("slug", request.getOrDefault("slug", "memorial-" + id.substring(0, 6)));
-    memorial.put("status", "draft");
-    memorial.put("createdAt", Instant.now().toString());
-    memorials.put(id, memorial);
+  public Map<String, Object> save(Map<String, Object> memorial) {
+    memorials.put(memorial.get("id").toString(), memorial);
     return memorial;
   }
 
-  public Object getMemorialById(String memorialId) {
+  public Map<String, Object> getMemorialById(String memorialId) {
     return memorials.get(memorialId);
   }
 
-  public Object deleteMemorial(String memorialId, String userId) {
-    Map<String, Object> memorial = memorials.remove(memorialId);
-    if (memorial == null) {
-      return null;
+  public Optional<Map<String, Object>> findBySlug(String slug) {
+    return memorials.values().stream()
+        .filter(memorial -> slug.equals(memorial.get("defaultSlug")) || slug.equals(memorial.get("premiumSlug")))
+        .findFirst();
+  }
+
+  public List<Map<String, Object>> getAllMemorials() {
+    return new ArrayList<>(memorials.values());
+  }
+
+  public List<Map<String, Object>> getMemorialsByOwner(String userId) {
+    List<Map<String, Object>> results = new ArrayList<>();
+    for (Map<String, Object> memorial : memorials.values()) {
+      if (userId.equals(memorial.get("userId"))) {
+        results.add(memorial);
+      }
     }
-    memorial.put("deletedBy", userId);
-    memorial.put("deletedAt", Instant.now().toString());
-    return memorial;
+    return results;
+  }
+
+  public void remove(String memorialId) {
+    memorials.remove(memorialId);
   }
 }
